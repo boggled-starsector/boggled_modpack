@@ -1,0 +1,10 @@
+{
+	"id":"Boggled Station Construction",
+	"name":"Boggled's Terraforming & Station Construction Mod",
+	"version":"5.0.0",
+	"author": "boggled",
+	"description":"Terraform planets and build astropoli, mining stations, siphon stations, Astral gates, Domain-tech stable location objectives and more.",
+	"gameVersion":"0.9.1a",
+	"jars":["jar/BoggledStationConstruction.jar"],
+	"modPlugin":"data.scripts.BoggledStationConstructionPlugin",
+}

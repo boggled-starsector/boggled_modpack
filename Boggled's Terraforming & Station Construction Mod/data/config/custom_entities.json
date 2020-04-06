@@ -1,0 +1,787 @@
+{
+	"boggled_astropolis_station_alpha_small":{
+		"defaultName":"Astropolis", # used if name=null in addCustomEntity()
+		"defaultRadius":60, # used if radius<0 in addCustomEntity()
+		"customDescriptionId":"astropolis_station",
+		"interactionImage":"graphics/illustrations/orbital_construction.jpg",
+		"icon":"graphics/icons/station0.png",
+		"iconWidth":24,
+		"iconHeight":24,
+		"sprite":"graphics/stations/station_lowtech1.png",
+		"spriteWidth":66,
+		"spriteHeight":80,
+		"renderShadow":true,
+		"useLightColor":true,
+		"showInCampaign":true,
+		"showIconOnMap":true,
+		"showNameOnMap":false,
+		"scaleNameWithZoom":false,
+		"scaleIconWithZoom":true,
+		"tags":["station", "boggled_astropolis"],
+		"layers":[STATIONS], # what layer(s) to render in. See CampaignEngineLayers.java for possible values
+	},
+	"boggled_astropolis_station_alpha_small_lights_overlay":{
+		"defaultName":"Astropolis Lights Overlay", # used if name=null in addCustomEntity()
+		"defaultRadius":0, # used if radius<0 in addCustomEntity()
+		"customDescriptionId":"astropolis_station",
+		"interactionImage":"graphics/illustrations/orbital_construction.jpg",
+		"icon":"graphics/icons/station0.png",
+		"iconWidth":0,
+		"iconHeight":0,
+		"sprite":"graphics/stations/lights_overlay_astropolis_alpha_small.png",
+		"spriteWidth":66,
+		"spriteHeight":80,
+		"renderShadow":false,
+		"useLightColor":false,
+		"showInCampaign":true,
+		"showIconOnMap":false,
+		"showNameOnMap":false,
+		"scaleNameWithZoom":false,
+		"scaleIconWithZoom":true,
+		"tags":["boggled_lights_overlay_astropolis_alpha_small"],
+		"layers":[STATIONS], # what layer(s) to render in. See CampaignEngineLayers.java for possible values
+	},
+	"boggled_astropolis_station_alpha_medium":{
+		"defaultName":"Astropolis", # used if name=null in addCustomEntity()
+		"defaultRadius":80, # used if radius<0 in addCustomEntity()
+		"customDescriptionId":"astropolis_station",
+		"interactionImage":"graphics/illustrations/orbital_construction.jpg",
+		"icon":"graphics/icons/station0.png",
+		"iconWidth":24,
+		"iconHeight":24,
+		"sprite":"graphics/stations/station_lowtech2.png",
+		"spriteWidth":85,
+		"spriteHeight":85,
+		"renderShadow":true,
+		"useLightColor":true,
+		"showInCampaign":true,
+		"showIconOnMap":true,
+		"showNameOnMap":false,
+		"scaleNameWithZoom":false,
+		"scaleIconWithZoom":true,
+		"tags":["station", "boggled_astropolis"],
+		"layers":[STATIONS], # what layer(s) to render in. See CampaignEngineLayers.java for possible values
+	},
+	"boggled_astropolis_station_alpha_medium_lights_overlay":{
+		"defaultName":"Astropolis Lights Overlay", # used if name=null in addCustomEntity()
+		"defaultRadius":0, # used if radius<0 in addCustomEntity()
+		"customDescriptionId":"astropolis_station",
+		"interactionImage":"graphics/illustrations/orbital_construction.jpg",
+		"icon":"graphics/icons/station0.png",
+		"iconWidth":0,
+		"iconHeight":0,
+		"sprite":"graphics/stations/lights_overlay_astropolis_alpha_medium.png",
+		"spriteWidth":85,
+		"spriteHeight":85,
+		"renderShadow":false,
+		"useLightColor":false,
+		"showInCampaign":true,
+		"showIconOnMap":false,
+		"showNameOnMap":false,
+		"scaleNameWithZoom":false,
+		"scaleIconWithZoom":true,
+		"tags":["boggled_lights_overlay_astropolis_alpha_medium"],
+		"layers":[STATIONS], # what layer(s) to render in. See CampaignEngineLayers.java for possible values
+	},
+	"boggled_astropolis_station_alpha_large":{
+		"defaultName":"Astropolis", # used if name=null in addCustomEntity()
+		"defaultRadius":110, # used if radius<0 in addCustomEntity()
+		"customDescriptionId":"astropolis_station",
+		"interactionImage":"graphics/illustrations/orbital_construction.jpg",
+		"icon":"graphics/icons/station0.png",
+		"iconWidth":26,
+		"iconHeight":26,
+		"sprite":"graphics/stations/station_lowtech3.png",
+		"spriteWidth":120,
+		"spriteHeight":125,
+		"renderShadow":true,
+		"useLightColor":true,
+		"showInCampaign":true,
+		"showIconOnMap":true,
+		"showNameOnMap":false,
+		"scaleNameWithZoom":false,
+		"scaleIconWithZoom":true,
+		"tags":["station", "boggled_astropolis"],
+		"layers":[STATIONS], # what layer(s) to render in. See CampaignEngineLayers.java for possible values
+	},
+	"boggled_astropolis_station_alpha_large_lights_overlay":{
+		"defaultName":"Astropolis Lights Overlay", # used if name=null in addCustomEntity()
+		"defaultRadius":0, # used if radius<0 in addCustomEntity()
+		"customDescriptionId":"astropolis_station",
+		"interactionImage":"graphics/illustrations/orbital_construction.jpg",
+		"icon":"graphics/icons/station0.png",
+		"iconWidth":0,
+		"iconHeight":0,
+		"sprite":"graphics/stations/lights_overlay_astropolis_alpha_large.png",
+		"spriteWidth":120,
+		"spriteHeight":125,
+		"renderShadow":false,
+		"useLightColor":false,
+		"showInCampaign":true,
+		"showIconOnMap":false,
+		"showNameOnMap":false,
+		"scaleNameWithZoom":false,
+		"scaleIconWithZoom":true,
+		"tags":["boggled_lights_overlay_astropolis_alpha_large"],
+		"layers":[STATIONS], # what layer(s) to render in. See CampaignEngineLayers.java for possible values
+	},
+	"boggled_astropolis_station_beta_small":{
+		"defaultName":"Astropolis", # used if name=null in addCustomEntity()
+		"defaultRadius":60, # used if radius<0 in addCustomEntity()
+		"customDescriptionId":"astropolis_station",
+		"interactionImage":"graphics/illustrations/orbital_construction.jpg",
+		"icon":"graphics/icons/station0.png",
+		"iconWidth":24,
+		"iconHeight":24,
+		"sprite":"graphics/stations/station_midline1.png",
+		"spriteWidth":66,
+		"spriteHeight":80,
+		"renderShadow":true,
+		"useLightColor":true,
+		"showInCampaign":true,
+		"showIconOnMap":true,
+		"showNameOnMap":false,
+		"scaleNameWithZoom":false,
+		"scaleIconWithZoom":true,
+		"tags":["station", "boggled_astropolis"],
+		"layers":[STATIONS], # what layer(s) to render in. See CampaignEngineLayers.java for possible values
+	},
+	"boggled_astropolis_station_beta_small_lights_overlay":{
+		"defaultName":"Astropolis Lights Overlay", # used if name=null in addCustomEntity()
+		"defaultRadius":0, # used if radius<0 in addCustomEntity()
+		"customDescriptionId":"astropolis_station",
+		"interactionImage":"graphics/illustrations/orbital_construction.jpg",
+		"icon":"graphics/icons/station0.png",
+		"iconWidth":0,
+		"iconHeight":0,
+		"sprite":"graphics/stations/lights_overlay_astropolis_beta_small.png",
+		"spriteWidth":66,
+		"spriteHeight":80,
+		"renderShadow":false,
+		"useLightColor":false,
+		"showInCampaign":true,
+		"showIconOnMap":false,
+		"showNameOnMap":false,
+		"scaleNameWithZoom":false,
+		"scaleIconWithZoom":true,
+		"tags":["boggled_lights_overlay_astropolis_beta_small"],
+		"layers":[STATIONS], # what layer(s) to render in. See CampaignEngineLayers.java for possible values
+	},
+	"boggled_astropolis_station_beta_medium":{
+		"defaultName":"Astropolis", # used if name=null in addCustomEntity()
+		"defaultRadius":80, # used if radius<0 in addCustomEntity()
+		"customDescriptionId":"astropolis_station",
+		"interactionImage":"graphics/illustrations/orbital_construction.jpg",
+		"icon":"graphics/icons/station0.png",
+		"iconWidth":24,
+		"iconHeight":24,
+		"sprite":"graphics/stations/station_midline2.png",
+		"spriteWidth":110,
+		"spriteHeight":90,
+		"renderShadow":true,
+		"useLightColor":true,
+		"showInCampaign":true,
+		"showIconOnMap":true,
+		"showNameOnMap":false,
+		"scaleNameWithZoom":false,
+		"scaleIconWithZoom":true,
+		"tags":["station", "boggled_astropolis"],
+		"layers":[STATIONS], # what layer(s) to render in. See CampaignEngineLayers.java for possible values
+	},
+	"boggled_astropolis_station_beta_medium_lights_overlay":{
+		"defaultName":"Astropolis Lights Overlay", # used if name=null in addCustomEntity()
+		"defaultRadius":0, # used if radius<0 in addCustomEntity()
+		"customDescriptionId":"astropolis_station",
+		"interactionImage":"graphics/illustrations/orbital_construction.jpg",
+		"icon":"graphics/icons/station0.png",
+		"iconWidth":0,
+		"iconHeight":0,
+		"sprite":"graphics/stations/lights_overlay_astropolis_beta_medium.png",
+		"spriteWidth":100,
+		"spriteHeight":90,
+		"renderShadow":false,
+		"useLightColor":false,
+		"showInCampaign":true,
+		"showIconOnMap":false,
+		"showNameOnMap":false,
+		"scaleNameWithZoom":false,
+		"scaleIconWithZoom":true,
+		"tags":["boggled_lights_overlay_astropolis_beta_medium"],
+		"layers":[STATIONS], # what layer(s) to render in. See CampaignEngineLayers.java for possible values
+	},
+	"boggled_astropolis_station_beta_large":{
+		"defaultName":"Astropolis", # used if name=null in addCustomEntity()
+		"defaultRadius":110, # used if radius<0 in addCustomEntity()
+		"customDescriptionId":"astropolis_station",
+		"interactionImage":"graphics/illustrations/orbital_construction.jpg",
+		"icon":"graphics/icons/station0.png",
+		"iconWidth":26,
+		"iconHeight":26,
+		"sprite":"graphics/stations/station_midline3.png",
+		"spriteWidth":120,
+		"spriteHeight":125,
+		"renderShadow":true,
+		"useLightColor":true,
+		"showInCampaign":true,
+		"showIconOnMap":true,
+		"showNameOnMap":false,
+		"scaleNameWithZoom":false,
+		"scaleIconWithZoom":true,
+		"tags":["station", "boggled_astropolis"],
+		"layers":[STATIONS], # what layer(s) to render in. See CampaignEngineLayers.java for possible values
+	},
+	"boggled_astropolis_station_beta_large_lights_overlay":{
+		"defaultName":"Astropolis Lights Overlay", # used if name=null in addCustomEntity()
+		"defaultRadius":0, # used if radius<0 in addCustomEntity()
+		"customDescriptionId":"astropolis_station",
+		"interactionImage":"graphics/illustrations/orbital_construction.jpg",
+		"icon":"graphics/icons/station0.png",
+		"iconWidth":0,
+		"iconHeight":0,
+		"sprite":"graphics/stations/lights_overlay_astropolis_beta_large.png",
+		"spriteWidth":120,
+		"spriteHeight":125,
+		"renderShadow":false,
+		"useLightColor":false,
+		"showInCampaign":true,
+		"showIconOnMap":false,
+		"showNameOnMap":false,
+		"scaleNameWithZoom":false,
+		"scaleIconWithZoom":true,
+		"tags":["boggled_lights_overlay_astropolis_beta_large"],
+		"layers":[STATIONS], # what layer(s) to render in. See CampaignEngineLayers.java for possible values
+	},
+	"boggled_astropolis_station_gamma_small":{
+		"defaultName":"Astropolis", # used if name=null in addCustomEntity()
+		"defaultRadius":60, # used if radius<0 in addCustomEntity()
+		"customDescriptionId":"astropolis_station",
+		"interactionImage":"graphics/illustrations/orbital_construction.jpg",
+		"icon":"graphics/icons/station0.png",
+		"iconWidth":24,
+		"iconHeight":24,
+		"sprite":"graphics/stations/station_hightech1.png",
+		"spriteWidth":66,
+		"spriteHeight":80,
+		"renderShadow":true,
+		"useLightColor":true,
+		"showInCampaign":true,
+		"showIconOnMap":true,
+		"showNameOnMap":false,
+		"scaleNameWithZoom":false,
+		"scaleIconWithZoom":true,
+		"tags":["station", "boggled_astropolis"],
+		"layers":[STATIONS], # what layer(s) to render in. See CampaignEngineLayers.java for possible values
+	},
+	"boggled_astropolis_station_gamma_small_lights_overlay":{
+		"defaultName":"Astropolis Lights Overlay", # used if name=null in addCustomEntity()
+		"defaultRadius":0, # used if radius<0 in addCustomEntity()
+		"customDescriptionId":"astropolis_station",
+		"interactionImage":"graphics/illustrations/orbital_construction.jpg",
+		"icon":"graphics/icons/station0.png",
+		"iconWidth":0,
+		"iconHeight":0,
+		"sprite":"graphics/stations/lights_overlay_astropolis_gamma_small.png",
+		"spriteWidth":66,
+		"spriteHeight":80,
+		"renderShadow":false,
+		"useLightColor":false,
+		"showInCampaign":true,
+		"showIconOnMap":false,
+		"showNameOnMap":false,
+		"scaleNameWithZoom":false,
+		"scaleIconWithZoom":true,
+		"tags":["boggled_lights_overlay_astropolis_gamma_small"],
+		"layers":[STATIONS], # what layer(s) to render in. See CampaignEngineLayers.java for possible values
+	},
+	"boggled_astropolis_station_gamma_medium":{
+		"defaultName":"Astropolis", # used if name=null in addCustomEntity()
+		"defaultRadius":80, # used if radius<0 in addCustomEntity()
+		"customDescriptionId":"astropolis_station",
+		"interactionImage":"graphics/illustrations/orbital_construction.jpg",
+		"icon":"graphics/icons/station0.png",
+		"iconWidth":24,
+		"iconHeight":24,
+		"sprite":"graphics/stations/station_hightech2.png",
+		"spriteWidth":110,
+		"spriteHeight":90,
+		"renderShadow":true,
+		"useLightColor":true,
+		"showInCampaign":true,
+		"showIconOnMap":true,
+		"showNameOnMap":false,
+		"scaleNameWithZoom":false,
+		"scaleIconWithZoom":true,
+		"tags":["station", "boggled_astropolis"],
+		"layers":[STATIONS], # what layer(s) to render in. See CampaignEngineLayers.java for possible values
+	},
+	"boggled_astropolis_station_gamma_medium_lights_overlay":{
+		"defaultName":"Astropolis Lights Overlay", # used if name=null in addCustomEntity()
+		"defaultRadius":0, # used if radius<0 in addCustomEntity()
+		"customDescriptionId":"astropolis_station",
+		"interactionImage":"graphics/illustrations/orbital_construction.jpg",
+		"icon":"graphics/icons/station0.png",
+		"iconWidth":0,
+		"iconHeight":0,
+		"sprite":"graphics/stations/lights_overlay_astropolis_gamma_medium.png",
+		"spriteWidth":110,
+		"spriteHeight":90,
+		"renderShadow":false,
+		"useLightColor":false,
+		"showInCampaign":true,
+		"showIconOnMap":false,
+		"showNameOnMap":false,
+		"scaleNameWithZoom":false,
+		"scaleIconWithZoom":true,
+		"tags":["boggled_lights_overlay_astropolis_gamma_medium"],
+		"layers":[STATIONS], # what layer(s) to render in. See CampaignEngineLayers.java for possible values
+	},
+	"boggled_astropolis_station_gamma_large":{
+		"defaultName":"Astropolis", # used if name=null in addCustomEntity()
+		"defaultRadius":110, # used if radius<0 in addCustomEntity()
+		"customDescriptionId":"astropolis_station",
+		"interactionImage":"graphics/illustrations/orbital_construction.jpg",
+		"icon":"graphics/icons/station0.png",
+		"iconWidth":26,
+		"iconHeight":26,
+		"sprite":"graphics/stations/station_hightech3.png",
+		"spriteWidth":120,
+		"spriteHeight":125,
+		"renderShadow":true,
+		"useLightColor":true,
+		"showInCampaign":true,
+		"showIconOnMap":true,
+		"showNameOnMap":false,
+		"scaleNameWithZoom":false,
+		"scaleIconWithZoom":true,
+		"tags":["station", "boggled_astropolis"],
+		"layers":[STATIONS], # what layer(s) to render in. See CampaignEngineLayers.java for possible values
+	},
+	"boggled_astropolis_station_gamma_large_lights_overlay":{
+		"defaultName":"Astropolis Lights Overlay", # used if name=null in addCustomEntity()
+		"defaultRadius":0, # used if radius<0 in addCustomEntity()
+		"customDescriptionId":"astropolis_station",
+		"interactionImage":"graphics/illustrations/orbital_construction.jpg",
+		"icon":"graphics/icons/station0.png",
+		"iconWidth":0,
+		"iconHeight":0,
+		"sprite":"graphics/stations/lights_overlay_astropolis_gamma_large.png",
+		"spriteWidth":120,
+		"spriteHeight":125,
+		"renderShadow":false,
+		"useLightColor":false,
+		"showInCampaign":true,
+		"showIconOnMap":false,
+		"showNameOnMap":false,
+		"scaleNameWithZoom":false,
+		"scaleIconWithZoom":true,
+		"tags":["boggled_lights_overlay_astropolis_gamma_large"],
+		"layers":[STATIONS], # what layer(s) to render in. See CampaignEngineLayers.java for possible values
+	},
+	"boggled_mining_station_small":{
+		"defaultName":"Mining Station", # used if name=null in addCustomEntity()
+		"defaultRadius":35, # used if radius<0 in addCustomEntity()
+		"customDescriptionId":"boggled_mining_station",
+		"interactionImage":"graphics/illustrations/orbital_construction.jpg",
+		"icon":"graphics/icons/station0.png",
+		"iconWidth":20,
+		"iconHeight":20,
+		"sprite":"graphics/stations/station_side05.png",
+		"spriteWidth":40,
+		"spriteHeight":40,
+		"renderShadow":true,
+		"useLightColor":true,
+		"showInCampaign":true,
+		"showIconOnMap":true,
+		"showNameOnMap":false,
+		"scaleNameWithZoom":false,
+		"scaleIconWithZoom":true,
+		"tags":["station", "boggled_mining_station", "boggled_mining_station_small"],
+		"layers":[STATIONS], # what layer(s) to render in. See CampaignEngineLayers.java for possible values
+	},
+	"boggled_mining_station_small_lights_overlay":{
+		"defaultName":"Mining Station Lights Overlay", # used if name=null in addCustomEntity()
+		"defaultRadius":0, # used if radius<0 in addCustomEntity()
+		"customDescriptionId":"boggled_mining_station",
+		"interactionImage":"graphics/illustrations/orbital_construction.jpg",
+		"icon":"graphics/icons/station0.png",
+		"iconWidth":0,
+		"iconHeight":0,
+		"sprite":"graphics/stations/lights_overlay_mining_small.png",
+		"spriteWidth":40,
+		"spriteHeight":40,
+		"renderShadow":false,
+		"useLightColor":false,
+		"showInCampaign":true,
+		"showIconOnMap":false,
+		"showNameOnMap":false,
+		"scaleNameWithZoom":false,
+		"scaleIconWithZoom":true,
+		"tags":["boggled_lights_overlay_mining_small"],
+		"layers":[STATIONS], # what layer(s) to render in. See CampaignEngineLayers.java for possible values
+	},
+	"boggled_mining_station_medium":{
+		"defaultName":"Mining Station", # used if name=null in addCustomEntity()
+		"defaultRadius":50, # used if radius<0 in addCustomEntity()
+		"customDescriptionId":"boggled_mining_station",
+		"interactionImage":"graphics/illustrations/orbital_construction.jpg",
+		"icon":"graphics/icons/station0.png",
+		"iconWidth":20,
+		"iconHeight":20,
+		"sprite":"graphics/stations/station_side02.png",
+		"spriteWidth":80,
+		"spriteHeight":80,
+		"renderShadow":true,
+		"useLightColor":true,
+		"showInCampaign":true,
+		"showIconOnMap":true,
+		"showNameOnMap":false,
+		"scaleNameWithZoom":false,
+		"scaleIconWithZoom":true,
+		"tags":["station", "boggled_mining_station", "boggled_mining_station_medium"],
+		"layers":[STATIONS], # what layer(s) to render in. See CampaignEngineLayers.java for possible values
+	},
+	"boggled_mining_station_medium_lights_overlay":{
+		"defaultName":"Mining Station Lights Overlay", # used if name=null in addCustomEntity()
+		"defaultRadius":0, # used if radius<0 in addCustomEntity()
+		"customDescriptionId":"boggled_mining_station",
+		"interactionImage":"graphics/illustrations/orbital_construction.jpg",
+		"icon":"graphics/icons/station0.png",
+		"iconWidth":0,
+		"iconHeight":0,
+		"sprite":"graphics/stations/lights_overlay_mining_medium.png",
+		"spriteWidth":80,
+		"spriteHeight":80,
+		"renderShadow":false,
+		"useLightColor":false,
+		"showInCampaign":true,
+		"showIconOnMap":false,
+		"showNameOnMap":false,
+		"scaleNameWithZoom":false,
+		"scaleIconWithZoom":true,
+		"tags":["boggled_lights_overlay_mining_medium"],
+		"layers":[STATIONS], # what layer(s) to render in. See CampaignEngineLayers.java for possible values
+	},
+	"boggled_siphon_station_small":{
+		"defaultName":"Siphon Station", # used if name=null in addCustomEntity()
+		"defaultRadius":35, # used if radius<0 in addCustomEntity()
+		"customDescriptionId":"boggled_siphon_station",
+		"interactionImage":"graphics/illustrations/orbital_construction.jpg",
+		"icon":"graphics/icons/station0.png",
+		"iconWidth":20,
+		"iconHeight":20,
+		"sprite":"graphics/stations/station_side01.png",
+		"spriteWidth":40,
+		"spriteHeight":40,
+		"renderShadow":true,
+		"useLightColor":true,
+		"showInCampaign":true,
+		"showIconOnMap":true,
+		"showNameOnMap":false,
+		"scaleNameWithZoom":false,
+		"scaleIconWithZoom":true,
+		"tags":["station", "boggled_siphon_station"],
+		"layers":[STATIONS], # what layer(s) to render in. See CampaignEngineLayers.java for possible values
+	},
+	"boggled_siphon_station_small_lights_overlay":{
+		"defaultName":"Siphon Station Lights Overlay", # used if name=null in addCustomEntity()
+		"defaultRadius":0, # used if radius<0 in addCustomEntity()
+		"customDescriptionId":"boggled_siphon_station",
+		"interactionImage":"graphics/illustrations/orbital_construction.jpg",
+		"icon":"graphics/icons/station0.png",
+		"iconWidth":0,
+		"iconHeight":0,
+		"sprite":"graphics/stations/lights_overlay_siphon_small.png",
+		"spriteWidth":40,
+		"spriteHeight":40,
+		"renderShadow":false,
+		"useLightColor":false,
+		"showInCampaign":true,
+		"showIconOnMap":false,
+		"showNameOnMap":false,
+		"scaleNameWithZoom":false,
+		"scaleIconWithZoom":true,
+		"tags":["boggled_lights_overlay_siphon_small"],
+		"layers":[STATIONS], # what layer(s) to render in. See CampaignEngineLayers.java for possible values
+	},
+	"boggled_siphon_station_medium":{
+		"defaultName":"Siphon Station", # used if name=null in addCustomEntity()
+		"defaultRadius":50, # used if radius<0 in addCustomEntity()
+		"customDescriptionId":"boggled_siphon_station",
+		"interactionImage":"graphics/illustrations/orbital_construction.jpg",
+		"icon":"graphics/icons/station0.png",
+		"iconWidth":20,
+		"iconHeight":20,
+		"sprite":"graphics/stations/station_side00.png",
+		"spriteWidth":80,
+		"spriteHeight":80,
+		"renderShadow":true,
+		"useLightColor":true,
+		"showInCampaign":true,
+		"showIconOnMap":true,
+		"showNameOnMap":false,
+		"scaleNameWithZoom":false,
+		"scaleIconWithZoom":true,
+		"tags":["station", "boggled_siphon_station"],
+		"layers":[STATIONS], # what layer(s) to render in. See CampaignEngineLayers.java for possible values
+	},
+	"boggled_siphon_station_medium_lights_overlay":{
+		"defaultName":"Siphon Station Lights Overlay", # used if name=null in addCustomEntity()
+		"defaultRadius":0, # used if radius<0 in addCustomEntity()
+		"customDescriptionId":"boggled_siphon_station",
+		"interactionImage":"graphics/illustrations/orbital_construction.jpg",
+		"icon":"graphics/icons/station0.png",
+		"iconWidth":0,
+		"iconHeight":0,
+		"sprite":"graphics/stations/lights_overlay_siphon_medium.png",
+		"spriteWidth":80,
+		"spriteHeight":80,
+		"renderShadow":false,
+		"useLightColor":false,
+		"showInCampaign":true,
+		"showIconOnMap":false,
+		"showNameOnMap":false,
+		"scaleNameWithZoom":false,
+		"scaleIconWithZoom":true,
+		"tags":["boggled_lights_overlay_siphon_medium"],
+		"layers":[STATIONS], # what layer(s) to render in. See CampaignEngineLayers.java for possible values
+	},
+	"boggled_astral_gate":{
+		"defaultName":"Astral Gate", # used if name=null in addCustomEntity()
+		"defaultRadius":120, # used if radius<0 in addCustomEntity()
+		"customDescriptionId":"astral_gate",
+		"interactionImage":"graphics/illustrations/orbital_construction.jpg",
+		"icon":"graphics/icons/gate0.png",
+		"iconWidth":20,
+		"iconHeight":20,
+		"sprite":"graphics/icons/sprites/astral_gate.png",
+		"spriteWidth":192,
+		"spriteHeight":192,
+		"renderShadow":false,
+		"useLightColor":false,
+		"showInCampaign":true,
+		"showIconOnMap":true,
+		"showNameOnMap":true,
+		"scaleNameWithZoom":false,
+		"scaleIconWithZoom":true,
+		"tags":["boggled_astral_gate", "station"],
+		"layers":[STATIONS], # what layer(s) to render in. See CampaignEngineLayers.java for possible values
+	},
+	"boggled_gatekeeper_station_small":{
+		"defaultName":"Gatekeeper Station", # used if name=null in addCustomEntity()
+		"defaultRadius":50, # used if radius<0 in addCustomEntity()
+		"customDescriptionId":"gatekeeper_station",
+		"interactionImage":"graphics/illustrations/orbital_construction.jpg",
+		"icon":"graphics/icons/station0.png",
+		"iconWidth":16,
+		"iconHeight":16,
+		"sprite":"graphics/stations/station_side03.png",
+		"spriteWidth":50,
+		"spriteHeight":50,
+		"renderShadow":true,
+		"useLightColor":true,
+		"showInCampaign":true,
+		"showIconOnMap":true,
+		"showNameOnMap":false,
+		"scaleNameWithZoom":false,
+		"scaleIconWithZoom":true,
+		"tags":["station", "boggled_gatekeeper_station"],
+		"layers":[STATIONS], # what layer(s) to render in. See CampaignEngineLayers.java for possible values
+	},
+	"boggled_gatekeeper_station_small_lights_overlay":{
+		"defaultName":"Gatekeeper Station Lights Overlay", # used if name=null in addCustomEntity()
+		"defaultRadius":0, # used if radius<0 in addCustomEntity()
+		"customDescriptionId":"gatekeeper_station",
+		"interactionImage":"graphics/illustrations/orbital_construction.jpg",
+		"icon":"graphics/icons/station0.png",
+		"iconWidth":0,
+		"iconHeight":0,
+		"sprite":"graphics/stations/lights_overlay_gatekeeper_small.png",
+		"spriteWidth":50,
+		"spriteHeight":50,
+		"renderShadow":false,
+		"useLightColor":false,
+		"showInCampaign":true,
+		"showIconOnMap":false,
+		"showNameOnMap":false,
+		"scaleNameWithZoom":false,
+		"scaleIconWithZoom":true,
+		"tags":["boggled_lights_overlay_gatekeeper_small"],
+		"layers":[STATIONS], # what layer(s) to render in. See CampaignEngineLayers.java for possible values
+	},
+	"boggled_gatekeeper_station_medium":{
+		"defaultName":"Gatekeeper Station", # used if name=null in addCustomEntity()
+		"defaultRadius":70, # used if radius<0 in addCustomEntity()
+		"customDescriptionId":"gatekeeper_station",
+		"interactionImage":"graphics/illustrations/orbital_construction.jpg",
+		"icon":"graphics/icons/station0.png",
+		"iconWidth":20,
+		"iconHeight":20,
+		"sprite":"graphics/stations/station_side04.png",
+		"spriteWidth":80,
+		"spriteHeight":80,
+		"renderShadow":true,
+		"useLightColor":true,
+		"showInCampaign":true,
+		"showIconOnMap":true,
+		"showNameOnMap":false,
+		"scaleNameWithZoom":false,
+		"scaleIconWithZoom":true,
+		"tags":["station", "boggled_gatekeeper_station"],
+		"layers":[STATIONS], # what layer(s) to render in. See CampaignEngineLayers.java for possible values
+	},
+	"boggled_gatekeeper_station_medium_lights_overlay":{
+		"defaultName":"Gatekeeper Station Lights Overlay", # used if name=null in addCustomEntity()
+		"defaultRadius":0, # used if radius<0 in addCustomEntity()
+		"customDescriptionId":"gatekeeper_station",
+		"interactionImage":"graphics/illustrations/orbital_construction.jpg",
+		"icon":"graphics/icons/station0.png",
+		"iconWidth":0,
+		"iconHeight":0,
+		"sprite":"graphics/stations/lights_overlay_gatekeeper_medium.png",
+		"spriteWidth":80,
+		"spriteHeight":80,
+		"renderShadow":false,
+		"useLightColor":false,
+		"showInCampaign":true,
+		"showIconOnMap":false,
+		"showNameOnMap":false,
+		"scaleNameWithZoom":false,
+		"scaleIconWithZoom":true,
+		"tags":["boggled_lights_overlay_gatekeeper_medium"],
+		"layers":[STATIONS], # what layer(s) to render in. See CampaignEngineLayers.java for possible values
+	},
+	#Deprecated. Exists to maintain backwards compatibility for those who built this old version of the station using a previous version of this mod
+	"boggled_astropolis_station_alpha":{
+		"defaultName":"Astropolis", # used if name=null in addCustomEntity()
+		"defaultRadius":110, # used if radius<0 in addCustomEntity()
+		"customDescriptionId":"astropolis_station",
+		"interactionImage":"graphics/illustrations/orbital_construction.jpg",
+		"icon":"graphics/icons/station0.png",
+		"iconWidth":28,
+		"iconHeight":28,
+		"sprite":"graphics/stations/station_lowtech3.png",
+		"spriteWidth":120,
+		"spriteHeight":125,
+		"renderShadow":true,
+		"useLightColor":true,
+		"showInCampaign":true,
+		"showIconOnMap":true,
+		"showNameOnMap":false,
+		"scaleNameWithZoom":false,
+		"scaleIconWithZoom":true,
+		"tags":["station", "boggled_astropolis"],
+		"layers":[STATIONS], # what layer(s) to render in. See CampaignEngineLayers.java for possible values
+	},
+	#Deprecated. Exists to maintain backwards compatibility for those who built this old version of the station using a previous version of this mod
+	"boggled_astropolis_station_beta":{
+		"defaultName":"Astropolis", # used if name=null in addCustomEntity()
+		"defaultRadius":110, # used if radius<0 in addCustomEntity()
+		"customDescriptionId":"astropolis_station",
+		"interactionImage":"graphics/illustrations/orbital_construction.jpg",
+		"icon":"graphics/icons/station0.png",
+		"iconWidth":28,
+		"iconHeight":28,
+		"sprite":"graphics/stations/station_midline3.png",
+		"spriteWidth":120,
+		"spriteHeight":125,
+		"renderShadow":true,
+		"useLightColor":true,
+		"showInCampaign":true,
+		"showIconOnMap":true,
+		"showNameOnMap":false,
+		"scaleNameWithZoom":false,
+		"scaleIconWithZoom":true,
+		"tags":["station", "boggled_astropolis"],
+		"layers":[STATIONS], # what layer(s) to render in. See CampaignEngineLayers.java for possible values
+	},
+	#Deprecated. Exists to maintain backwards compatibility for those who built this old version of the station using a previous version of this mod
+	"boggled_astropolis_station_gamma":{
+		"defaultName":"Astropolis", # used if name=null in addCustomEntity()
+		"defaultRadius":110, # used if radius<0 in addCustomEntity()
+		"customDescriptionId":"astropolis_station",
+		"interactionImage":"graphics/illustrations/orbital_construction.jpg",
+		"icon":"graphics/icons/station0.png",
+		"iconWidth":28,
+		"iconHeight":28,
+		"sprite":"graphics/stations/station_hightech3.png",
+		"spriteWidth":120,
+		"spriteHeight":125,
+		"renderShadow":true,
+		"useLightColor":true,
+		"showInCampaign":true,
+		"showIconOnMap":true,
+		"showNameOnMap":false,
+		"scaleNameWithZoom":false,
+		"scaleIconWithZoom":true,
+		"tags":["station", "boggled_astropolis"],
+		"layers":[STATIONS], # what layer(s) to render in. See CampaignEngineLayers.java for possible values
+	},
+	#Deprecated. Exists to maintain backwards compatibility for those who built this old version of the station using a previous version of this mod
+	"boggled_mining_station":{
+		"defaultName":"Mining Station", # used if name=null in addCustomEntity()
+		"defaultRadius":45, # used if radius<0 in addCustomEntity()
+		"customDescriptionId":"boggled_mining_station",
+		"interactionImage":"graphics/illustrations/orbital_construction.jpg",
+		"icon":"graphics/icons/station0.png",
+		"iconWidth":20,
+		"iconHeight":20,
+		"sprite":"graphics/stations/station_mining00.png",
+		"spriteWidth":40,
+		"spriteHeight":40,
+		"renderShadow":true,
+		"useLightColor":true,
+		"showInCampaign":true,
+		"showIconOnMap":true,
+		"showNameOnMap":false,
+		"scaleNameWithZoom":false,
+		"scaleIconWithZoom":true,
+		"tags":["station", "boggled_mining_station"],
+		"layers":[STATIONS], # what layer(s) to render in. See CampaignEngineLayers.java for possible values
+	},
+	#Deprecated. Exists to maintain backwards compatibility for those who built this old version of the station using a previous version of this mod
+	"boggled_siphon_station":{
+		"defaultName":"Siphon Station", # used if name=null in addCustomEntity()
+		"defaultRadius":35, # used if radius<0 in addCustomEntity()
+		"customDescriptionId":"boggled_siphon_station",
+		"interactionImage":"graphics/illustrations/orbital.jpg",
+		"icon":"graphics/icons/station0.png",
+		"iconWidth":20,
+		"iconHeight":20,
+		"sprite":"graphics/stations/station_side05.png",
+		"spriteWidth":40,
+		"spriteHeight":40,
+		"renderShadow":true,
+		"useLightColor":true,
+		"showInCampaign":true,
+		"showIconOnMap":true,
+		"showNameOnMap":false,
+		"scaleNameWithZoom":false,
+		"scaleIconWithZoom":true,
+		"tags":["station", "boggled_siphon_station"],
+		"layers":[STATIONS], # what layer(s) to render in. See CampaignEngineLayers.java for possible values
+	},
+	#Deprecated. Exists to maintain backwards compatibility for those who built this old version of the station using a previous version of this mod
+	"boggled_station_mining":{
+		"defaultName":"Mining Station", # used if name=null in addCustomEntity()
+		"defaultRadius":110, # used if radius<0 in addCustomEntity()
+		"customDescriptionId":"orbital_station_default",
+		"interactionImage":"graphics/illustrations/orbital_construction.jpg",
+		"icon":"graphics/icons/station0.png",
+		"iconWidth":28,
+		"iconHeight":28,
+		"sprite":"graphics/stations/station_lowtech3.png",
+		"spriteWidth":120,
+		"spriteHeight":125,
+		"renderShadow":true,
+		"useLightColor":true,
+		"showInCampaign":true,
+		"showIconOnMap":true,
+		"showNameOnMap":false,
+		"scaleNameWithZoom":false,
+		"scaleIconWithZoom":true,
+		"tags":["station", "boggled_mining_station"],
+		"layers":[STATIONS], # what layer(s) to render in. See CampaignEngineLayers.java for possible values
+	}
+}
+
+

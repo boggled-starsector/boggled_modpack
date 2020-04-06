@@ -1,0 +1,2 @@
+name,id,demand class,base price,export value,price variability,utility,origin,tags,stack size,cargo space,icon,sound id,sound id drop,order,economyTier,econUnit,iconWidthMult,plugin,desc
+Domain-Era Artifacts,domain_artifacts,domain_artifacts,500,500,3,1,,,1000,1,graphics/icons/items/domain_artifacts.png,ui_cargo_luxury,ui_cargo_luxury_drop,41,2.9,200,1,,

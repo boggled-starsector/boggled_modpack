@@ -1,0 +1,329 @@
+id,trigger,conditions,script,text,options,notes
+# gate interactions,,,,,,
+astralGateOpenDialog,OpenInteractionDialog,$tag:boggled_astral_gate,"ShowDefaultVisual
+PrintDescription 1
+AddText ""To traverse the gate or select the destination gate, add the respective abilities to your ability bar.""
+SetShortcut astralGateLeave ""ESCAPE""",,astralGateLeave:Leave,
+astralGateLeave,DialogOptionSelected,$option == astralGateLeave,DismissDialog,,,
+#
+#Elias Luyten interactions
+#
+boggledGateQuest_IntroGreeting,PickGreeting,"$tag:boggled_gate_quest_eliasLuyten score:10","showLuytenCustomVisual
+FireBest PopulateOptionsBoggledGateQuest","After a short wait, your connection request is accepted.",,
+
+
+boggledGateQuest_introPopulate1,PopulateOptionsBoggledGateQuest,"!checkPlayerWentDownProvideAstralRoute
+!checkPlayerWentDownPayBribeRoute",,"""Chancellor Luyten here. What can I do for you?"" He's staring intently at something off screen.","0:askLuytenForResearchData:""I'm looking for some research data.""
+1:cutCommLinkNoText:Cut the comm link",
+boggledGateQuest_introPopulate2,PopulateOptionsBoggledGateQuest,"checkPlayerWentDownProvideAstralRoute
+!checkPlayerHasAstralInFleetBoggled",,"""Well, have you brought me an Astral-class carrier?""","0:playerDidNotBringLuytenAnAstral:""Not yet.""",
+boggledGateQuest_introPopulate3,PopulateOptionsBoggledGateQuest,"checkPlayerHasEnoughCreditsForBribe
+checkPlayerWentDownPayBribeRoute",,"""Well, do you have my credits?""","0:payLuytenTheBribe:""I'll send the credits right away.""
+1:letMeThinkAboutPayingBribe:""Not yet.""
+2:changeMindAndAdmitToAICore:""Has an AI core ever reviewed the data?""",
+boggledGateQuest_introPopulate5,PopulateOptionsBoggledGateQuest,"!checkPlayerHasEnoughCreditsForBribe
+checkPlayerWentDownPayBribeRoute",,"""Well, do you have my credits?""","0:letMeThinkAboutPayingBribe:""Not yet.""
+1:changeMindAndAdmitToAICore:""Has an AI core ever reviewed the data?""",
+boggledGateQuest_playerDidNotBringLuytenAnAstral,DialogOptionSelected,$option == playerDidNotBringLuytenAnAstral,,"""Then why are you here? If you want the gate research data, go get one."" He cuts the comm link.","0:cutCommLinkNoText:Continue",
+boggledGateQuest_luytenFirstAnswer,DialogOptionSelected,$option == askLuytenForResearchData,,"""What data?""","0:askLuytenForDomainGateData:Ask Luyten for the Hegemony gate research data",
+boggledGateQuest_luytenSecondAnswer,DialogOptionSelected,$option == askLuytenForDomainGateData,,"Luyten immediately turns his head and looks intently at you. ""That research is classified. It would be illegal for me to share it with you,"" he says calmly. He points his finger at you. ""You shouldn't even know that it exists.""","0:offerToBribeLuyten:Offer a bribe in exchange for the data",
+boggledGateQuest_luytenThirdAnswer,DialogOptionSelected,$option == offerToBribeLuyten,,"""Here we go again."" Luyten shakes his head. ""Let me guess. Some rogue AI core told you to bribe me to get the data?""","0:admitToRogueAICore:""How did you know?""
+1:denyRogueAICore:(Lie) ""That's preposterous.""",
+boggledGateQuest_luytenAdmittedToAICore,DialogOptionSelected,$option == admitToRogueAICore,,"""I've already had two other people working on behalf of rogue AI cores approach me about that data. They both tried to bribe me.""","0:askLuytenIfBribesWorked:""Did the bribes work?""
+1:askLuytenWhyCoresWantData:""Why do you think AI cores want that data?""",
+boggledGateQuest_askLuytenWhyCoresWantData,DialogOptionSelected,$option == askLuytenWhyCoresWantData,,"""They think our monkey brains are too simplistic to understand how the gates work. They think the gates were invented by an artificial intelligence to begin with, and that only they can fix them."" Luyten points his finger at you again. ""Let me tell you something. One of the other cores spoke with me after looking at the data. It basically admitted it has no idea why the gate network stopped working. I guess they're not so clever after all.""","0:askLuytenIfBribesWorked:""Did the bribes work?""
+1:notAfraidOfWorkingWithAICores:""You're not afraid of working with AI cores?""",
+boggledGateQuest_notAfraidOfWorkingWithAICores,DialogOptionSelected,$option == notAfraidOfWorkingWithAICores,,"Luyten shrugs. ""Not all of them are insane and genocidal. The one I spoke with allegedly resides in the ruins of an abandoned colony just outside the core. It does nothing but study xenolife."" He scoffs. ""Get this. It wanted to reactivate the gates just so it could find more xenolife to research.""","0:askLuytenIfBribesWorked:""I take it the bribes worked then?""",
+boggledGateQuest_askLuytenIfBribesWorked,DialogOptionSelected,$option == askLuytenIfBribesWorked,"addTagPlayerWentDownProvideAstralRoute","""Nope."" Luyten smiles. ""How about we arrange a trade instead?""","0:whatKindOfTradeLuyten:""What kind of trade?""",
+boggledGateQuest_whatKindOfTradeLuyten,DialogOptionSelected,$option == whatKindOfTradeLuyten,,"I'm working on blueprints to build a larger version of the recall device installed aboard Astral-class carriers. You know, the thing that teleports all the fighters back to the ship?""","0:luytenAskAboutAstralRecallDevice:""And?""",
+boggledGateQuest_luytenAskAboutAstralRecallDevice1,DialogOptionSelected,"$option == luytenAskAboutAstralRecallDevice
+!checkPlayerHasAstralInFleetBoggled",,"""Well, I'm going to need an Astral to perform tests on. And given the resources I have available, using human engineers to draft the blueprints for a massive station won't be feasible, so I'll need your AI core friend to help me out with that."" He pauses for a moment. ""You wouldn't happen to have an Astral-class carrier lying around, would you?""","0:luytenPlayerDoesNotHaveAstralInFleet:""No, I don't.""",
+boggledGateQuest_luytenAskAboutAstralRecallDevice2,DialogOptionSelected,"$option == luytenAskAboutAstralRecallDevice
+checkPlayerHasAstralInFleetBoggled",,"""Well, I'm going to need an Astral to perform tests on. And given the resources I have available, using human engineers to draft the blueprints for a massive station won't be feasible, so I'll need your AI core friend to help me out with that."" He pauses for a moment. ""You wouldn't happen to have an Astral-class carrier lying around, would you?""","0:tellLuytenAstralIsInFleet:""I do happen to have one lying around.""
+1:luytenPlayerDoesNotHaveAstralInFleet:""No, I don't.""",
+boggledGateQuest_luytenPlayerDoesNotHaveAstralInFleet,DialogOptionSelected,$option == luytenPlayerDoesNotHaveAstralInFleet,,"""Alright, then go use the credits you were going to bribe me with to buy one. I'll be waiting here for you."" Luyten cuts the comm link.
+
+""This guy is more nuts than the AI core,"" your comms officer says.","0:cutCommLinkNoText:Continue",
+boggledGateQuest_introPopulate4,PopulateOptionsBoggledGateQuest,"checkPlayerWentDownProvideAstralRoute
+checkPlayerHasAstralInFleetBoggled",,"""Well, have you brought me an Astral-class carrier?""","0:playerBroughtLuytenAnAstral:""Yes, I have one.""
+1:playerDidNotBringLuytenAnAstral:""Not yet.""",
+boggledGateQuest_playerBroughtLuytenAnAstral,DialogOptionSelected,$option == playerBroughtLuytenAnAstral,,"Luyten looks surprised. ""I was joking when I told you get one. I thought you would interpret it as me telling you to fuck off."" He smiles nervously. ""But do you really have one in your fleet?""","0:tellLuytenAstralIsInFleet:""Yes, I do.""",
+boggledGateQuest_tellLuytenAstralIsInFleet,DialogOptionSelected,$option == tellLuytenAstralIsInFleet,,"""This is wonderful! I guess that AI core knows how to find capable lackeys. I'll come aboard immediately to run some tests on the recall device.""","0:letLuytenRunTestsOnAstral:Allow Luyten to run tests aboard your Astral-class carrier",
+boggledGateQuest_letLuytenRunTestsOnAstral,DialogOptionSelected,$option == letLuytenRunTestsOnAstral,"boggledGateQuestAdvanceToStage3","Luyten immediately gets to work attaching cables and monitors to the recall device on your Astral. He proceeds to recall sequentially larger pieces of space debris, stopping only when the device is no longer able to teleport the entire mass of the target object with a single pulse.
+
+""That does it. I have all the data I need. Go tell your pal on Aeolus that if it completes these station blueprints for me, I'll send the Hegemony gate research data in exchange."" Luyten takes his shuttle back to Ancyra.","0:cutCommLinkNoText:Continue",
+boggledGateQuest_denyRogueAICore,DialogOptionSelected,$option == denyRogueAICore,,"Luyten smiles knowingly. ""Hypothetically, if you were working for an AI core, you wouldn't just admit that to a stranger, would you?""","0:denyWorkingForRogueAICore:""I serve Ludd, not the silicon Satan.""
+1:admitWorkingForRogueAICore:""I'm hypothetically working for a hypothetical AI core.""",
+boggledGateQuest_admitWorkingForRogueAICore,DialogOptionSelected,$option == admitWorkingForRogueAICore,,"""I see. Well, in that case, we may be able to reach an agreement after all.""","0:askLuytenIfBribesWorked:""So you will accept a bribe?"""
+boggledGateQuest_denyWorkingForRogueAICore1,DialogOptionSelected,"$option == denyWorkingForRogueAICore
+checkPlayerHasEnoughCreditsForBribe","addTagPlayerWentDownPayBribeRoute","Luyten waves his hand dismissively. ""Very well then. I want 100,000 credits for the data."" He points his finger at you again. ""But know this: minds far superior to ours have reviewed that data and came up with nothing. The gates can't be fixed.""","0:payLuytenTheBribe:""I'll send the credits right away.""
+1:letMeThinkAboutPayingBribe:""Let me think about it.""
+2:changeMindAndAdmitToAICore:""Has an AI core ever reviewed the data?""",
+boggledGateQuest_denyWorkingForRogueAICore2,DialogOptionSelected,"$option == denyWorkingForRogueAICore
+!checkPlayerHasEnoughCreditsForBribe","addTagPlayerWentDownPayBribeRoute","Luyten waves his hand dismissively. ""Very well then. I want 100,000 credits for the data."" He points his finger at you again. ""But know this: minds far superior to ours have reviewed that data and came up with nothing. The gates can't be fixed.""","0:letMeThinkAboutPayingBribe:""Let me think about it.""
+1:changeMindAndAdmitToAICore:""Has an AI core ever reviewed the data?""",
+boggledGateQuest_letMeThinkAboutPayingBribe,DialogOptionSelected,$option == letMeThinkAboutPayingBribe,,"""Did you travel all the way here just to waste my time? Come back when you've got the credits."" He cuts the comm link.","0:cutCommLinkNoText:Continue",
+boggledGateQuest_payLuytenTheBribe,DialogOptionSelected,$option == payLuytenTheBribe,"subtractBribeAmountFromPlayerBoggled
+boggledGateQuestAdvanceToStage7","Luyten sends you a payment address. Afer you transfer the funds, he uploads an encrypted file to your TriPad. ""The password is 'ReindeerFlotilla'. Good luck."" He cuts the comm link.","0:cutCommLinkNoText:Continue",
+boggledGateQuest_changeMindAndAdmitToAICore,DialogOptionSelected,$option == changeMindAndAdmitToAICore,"removeTagPlayerWentDownPayBribeRoute","Luyten sits up in his chair. ""I knew it! You're working for an AI core after all."" His eyes dart back to something off screen. ""I know of multiple alpha AI cores having reviewed the data. One even admitted to me that it has no idea why the gates stopped working.""","0:askLuytenIfBribesWorked:""I take it the bribes worked then?""
+1:notAfraidOfWorkingWithAICores:""You're not afraid of working with AI cores?""",
+#
+#Building Domain-era stable location structures
+#
+stable_buildRelayDomainOpt,Stable_AddBuildOptions,boggledObjectiveCheckEnabled,,,40:SL_buildDomainRelay:Construct a Domain-tech comm relay,
+stable_buildArrayDomainOpt,Stable_AddBuildOptions,boggledObjectiveCheckEnabled,,,50:SL_buildDomainArray:Construct a Domain-tech sensor array,
+stable_buildBuoyDomainOpt,Stable_AddBuildOptions,boggledObjectiveCheckEnabled,,,60:SL_buildDomainBuoy:Construct a Domain-tech nav buoy,
+stable_buildDomainRelay,DialogOptionSelected,$option == SL_buildDomainRelay,"$slBuildType = comm_relay 0
+boggledObjectivePrintDescription $slBuildType
+FireBest Stable_DomainBuildConfirmOptions",,,
+stable_buildDomainSensor,DialogOptionSelected,$option == SL_buildDomainArray,"$slBuildType = sensor_array 0
+boggledObjectivePrintDescription $slBuildType
+FireBest Stable_DomainBuildConfirmOptions",,,
+stable_buildDomainBuoy,DialogOptionSelected,$option == SL_buildDomainBuoy,"$slBuildType = nav_buoy 0
+boggledObjectivePrintDescription $slBuildType
+FireBest Stable_DomainBuildConfirmOptions",,,
+stable_confirmOptsDomain,Stable_DomainBuildConfirmOptions,boggledObjectiveCanBuild $slBuildType,,,"boggledDomainbuildProceed:Proceed
+SL_cancelBuild:Never mind",
+stable_confirmOptsCantDomain,Stable_DomainBuildConfirmOptions,!boggledObjectiveCanBuild $slBuildType,SetEnabled boggledDomainbuildProceed false,,"boggledDomainbuildProceed:Proceed
+SL_cancelBuild:Never mind",
+stable_buildProceedDomain,DialogOptionSelected,$option == boggledDomainbuildProceed,"boggledObjectiveBuild $slBuildType
+DismissDialog",,,
+#
+#Cruor main menu dialog tree
+#
+marketAddVegaRescueOption,PopulateOptions,"$tag:boggled_lobster_quest_fireVegaRescue
+cruorPopulateVegaRescueOption",,,"0:considerVegaRaid:Consider your options to rescue Vega",
+considerVegaRaid1,DialogOptionSelected,"$option == considerVegaRaid
+playerOwnsCruor",,"According to the information provided by Simmons, Vega is being held in a labor camp run by Commandant Walter Horn.
+
+Cruor is under your control. You could contact Commandant Horn via the comm directory and order him to release Vega into your custody.","0:cutCommLinkNoText:Continue",
+considerVegaRaid2,DialogOptionSelected,"$option == considerVegaRaid
+!playerOwnsCruor",,"According to the information provided by Simmons, Vega is being held in a labor camp run by Commandant Walter Horn.
+
+You could launch a raid on the labor camp to free Vega. Aternatively, you could contact Commandant Horn via the comm directory and attempt to free her without risking your marines.","0:examineRaidFeasibility:Ask your ground commander about the feasibility of a raid
+1:cutCommLinkNoText:Go Back",
+examineRaidFeasibility1,DialogOptionSelected,"$option == examineRaidFeasibility
+raidFeasibilityBoolean",,"Your ground commander grimaces as he reviews images of the camp taken from orbit. ""The defenses at this facility are extensive. They have armored ground vehicles, and anti-ship batteries are located near the prison complex. Worse yet, we can't fire on them from orbit because we might accidentally kill the extraction target."" He thinks for a moment. ""We have enough marines to mount an assault. However, I estimate our forces will suffer hundreds of casualties.""","0:confirmLaunchRaid:Lauch the raid
+1:reconsiderLaunchingRaid:Reconsider launching the raid",
+examineRaidFeasibility2,DialogOptionSelected,"$option == examineRaidFeasibility
+!raidFeasibilityBoolean",,"Your ground commander grimaces as he reviews images of the camp taken from orbit. ""The defenses at this facility are extensive. They have armored ground vehicles, and anti-ship batteries are located near the prison complex. Worse yet, we can't fire on them from orbit because we might accidentally kill the extraction target."" He thinks for a moment. ""We'll need at least 500 marines to have a reasonable probability of success. We should recruit more troops, or find a different way to free Vega.""","0:cutCommLinkNoText:Go Back",
+reconsiderLaunchingRaid,DialogOptionSelected,"$option == reconsiderLaunchingRaid",,"You decide not to launch a raid at this time.","0:cutCommLink:Go Back",
+confirmLaunchRaid,DialogOptionSelected,"$option == confirmLaunchRaid",,"Your dropships disappear from view one by one as they enter Cruor's hazy atmosphere. ""Thermal sensors are showing that the anti-ship batteries at the facility have lost power,"" exclaims one of your crewmembers. ""Why are they shutting down their defenses?""
+
+Your ground commander looks stunned. He presses a button on the comms console. ""What's going on down there?"" 
+
+""Sir, we're taking small-arms fire but nothing from the batteries. If those batteries stay down, this will be a piece of cake,"" comes the crackling response.","0:continueToConclusionOfRaid:Continue",
+continueToConclusionOfRaid,DialogOptionSelected,"$option == continueToConclusionOfRaid","removeMarineCasualtiesFromRaid
+displayMessageMarinesLost","Your crew watches the helmet feeds with anticipation as your marines engage the defenders. The armored vehicles inflict some casualties on your troops, but once they're destroyed the rest of the hostile forces surrender. Your marines systematically search the facility, and eventually you receive news that Elena Vega has been found and is being brought back to your flagship.","0:startElenaVegaConversation:Continue",
+#
+#Walter Horn interactions
+#
+lobsterQuest_introGreeting,PickGreeting,"$tag:boggled_lobster_quest_commandant score:10","showHornCustomVisual
+FireBest PopulateOptionsLobsterQuest1","After a short wait, your connection request is accepted.",,
+
+
+lobsterQuest_introPopulate1,PopulateOptionsLobsterQuest1,"commandantAskedAboutVega score:9",,"""This is Commandant Walter..."" He recognizes you and his demeanor changes immediately. ""I told you to fuck off!"" He cuts the comm link.","0:cutCommLinkNoText:Continue",
+lobsterQuest_introPopulate2,PopulateOptionsLobsterQuest1,"backedOutOfHiringPrisoners score:8",,"""Finally made up your mind?""","0:askToInspectPrisoners:Tell Horn you need to inspect the prisoners in-person before making a purchase
+1:backOutOfHiringPrisoners:Tell Horn you need more time to decide whether to hire the prisoners",
+lobsterQuest_introPopulate3,PopulateOptionsLobsterQuest1,,,"""This is Commandant Walter Horn. What do you want?""","0:askAboutElenaVega:""I'm looking for a prisoner named Elena Vega.""
+1:askAboutPrisonLabor:(Lie) ""I'm looking to hire prison labor for a dangerous mining job.""
+2:cutCommLink:Cut the comm link",
+lobsterQuest_introPopulate4,PopulateOptionsLobsterQuest1,"playerOwnsCruor score:10",,"""Commandant Walter Horn at your service.""","0:askAboutElenaVegaControlsCruor:""I'm looking for a prisoner named Elena Vega.""
+1:cutCommLink:Cut the comm link",
+askAboutElenaVegaControlsCruor,DialogOptionSelected,$option == askAboutElenaVegaControlsCruor,,"Horn sighs. ""You're not the first person to ask about her. I have no idea why she's so special, and I don't want to know. I'll put her on a shuttle to your flagship immediately. Good riddance.""","0:startElenaVegaConversation:Continue",
+askAboutElenaVega,DialogOptionSelected,$option == askAboutElenaVega,"addTagCommandantAskedAboutVega","Horn frowns and slams his fist on the console. ""I already told you people I can't help with this. The spooks warned me not to let her escape. You can take your credits and shove them!"" He cuts the comm link before you can respond.","0:cutCommLinkNoText:Continue",
+askAboutPrisonLabor,DialogOptionSelected,$option == askAboutPrisonLabor,,"Horn smiles. ""You've come to the right place. Nobody will blink an eye if some of the prisoners are killed in a mining accident. You'll just have to compensate me for their loss at the conclusion of the job."" Horn looks down at something off screen. ""We have a few hundred available right now. I charge two credits per month for each prisoner. Tell me how many you need and I'll have them sent up to your ship immediately.""","0:askToInspectPrisoners:Tell Horn you need to inspect the prisoners in-person before making a purchase
+1:backOutOfHiringPrisoners:Tell Horn you need more time to decide whether to hire the prisoners",
+backOutOfHiringPrisoners,DialogOptionSelected,$option == backOutOfHiringPrisoners,"addTagBackedOutOfHiringPrisoners","""Let me know when you're ready to do business."" Horn cuts the comm link.","0:cutCommLinkNoText:Continue",
+askToInspectPrisoners,DialogOptionSelected,$option == askToInspectPrisoners,,"Horn looks annoyed for a moment, but quickly regains his composure. ""Of course. I'll authorize your shuttle to land at the camp. I look forward to doing business with you."" He cuts the comm link.
+
+""Great work!"" Your ground commander rubs his hands together menacingly. ""This bastard will never know what hit him.""","0:continueToLanding:Take a shuttle down to the labor camp",
+continueToLanding,DialogOptionSelected,$option == continueToLanding,ShowDefaultVisual,"The cracked and broken surface of Cruor slowly approaches as your shuttle descends through the atmosphere. You hear a crackle from the comms terminal.
+
+""Authorization codes received. You are cleared for landing.""
+
+You peer out at the enormous strip mine attendant to the labor camp. Mining vehicles billow smoke as they meander through the pit, and the tiny figures of the prisoners become visible as the shuttle passes low overhead.
+
+""Come in slow over that crowd,"" says your ground commander. There's a building complex close to edge of the pit, and a large group of prisoners are milling about nearby.
+
+""Yes, sir,"" replies the pilot.","0:continueToDropRifles:Continue",
+continueToDropRifles,DialogOptionSelected,$option == continueToDropRifles,,"A marine enters the cockpit and salutes. ""The package is ready for drop, sir.""
+
+""Do it."" The marine presses a button on his wrist. Nothing happens for a few seconds, and then you hear a loud crash from the surface. The pilot maneuvers the shuttle to bring the prisoners below back into view. A crate has landed nearby and broken open from the impact. Gauss rifles and ammunition are strewn about the area. The prisoners stand still for a moment, but then you hear shouts and some of them rush forward and pick up weapons.","0:continueToLandingPad:Proceed to the landing pad",
+continueToLandingPad,DialogOptionSelected,$option == continueToLandingPad,,"Your shuttle touches down on a landing pad facing what appears to be the command building of the prison complex. A few minutes pass in tense silence. Eventually you see an armored personnel carrier drive out of the garage of the command building and speed off in the direction of where you dropped the crate. As soon as it's out of view, a few dozen marines exit your shuttle and sprint towards the command building.","0:continueToRescue:Continue",
+continueToRescue,DialogOptionSelected,$option == continueToRescue,,"You watch from the shuttle cockpit as several more armored vehicles drive past the landing pad at high speed. You hear sporadic small arms fire, but it's too distant to be coming from inside the command building. Finally your marines exit the building with a prisoner running beside them. As soon as they get on board, the pilot takes off and heads back to your fleet in orbit.","0:startElenaVegaConversation:Continue",
+#
+#Vega conversation tree
+#
+startElenaVegaConversation,DialogOptionSelected,$option == startElenaVegaConversation,showVegaCustomVisual,"Elena Vega stares out the window on the bridge towards the roiling electrical storms on the night side of Salus. Visually she appears to be a baseline human, but the scanners in the airlock revealed that most of her body consists of sophisticated cybernetics of unknown design.
+
+""I'm guessing Simmons is behind this,"" she says, without turning her head.","0:continueToOptionTreeVega:""That's right.""",
+continueToOptionTreeVega,DialogOptionSelected,"$option == continueToOptionTreeVega","FireAll PopulateOptionsVegaDialogue","""Then I'm sure you'll be very well compensated for your efforts."" She finally turns her gaze towards you. ""Let me have your TriPad. I'll contact him and arrange for a shuttle to come get me.""",,
+lobsterQuest_vegaConversationPopulate1,PopulateOptionsVegaDialogue,"!playerSmashedTheirTriPad",,,"0:giveVegaTheTriPad:Hand Vega your TriPad",
+lobsterQuest_vegaConversationPopulate2,PopulateOptionsVegaDialogue,"playerSmashedTheirTriPad",,,"0:giveVegaTheTriPadSmashed:Let Vega use your comms console to call Simmons",
+lobsterQuest_vegaConversationPopulate3,PopulateOptionsVegaDialogue,"!playerSmashedTheirTriPad
+!playerHungUpOnSimmons",,,"0:callSimmonsYourself:Call Simmons yourself to demand a larger reward",
+lobsterQuest_vegaConversationPopulate4,PopulateOptionsVegaDialogue,"!playerAlreadyAskedVegaAboutCybernetics",,,"0:askVegaAboutCybernetics:Ask Vega about her cybernetics",
+askVegaAboutCybernetics,DialogOptionSelected,"$option == askVegaAboutCybernetics","addTagAlreadyAskedVegaAboutCybernetics
+FireAll PopulateOptionsVegaDialogue","""Do I scare you?"" she asks playfully. Her eyes dart to the marines standing behind you. ""If it makes you feel any better, gauss rifles are just as effective against cyborgs as they are against meatbags.""",,
+lobsterQuest_vegaConversationPopulate5,PopulateOptionsVegaDialogue,"playerKnowsAboutLobsters
+!playerAlreadyAskedVegaAboutHeist",,,"0:askVegaAboutStealingTheEquipment:Ask Vega how she managed to steal the gene editing equipment",
+askVegaAboutStealingTheEquipment,DialogOptionSelected,$option == askVegaAboutStealingTheEquipment,"addTagAlreadyAskedVegaAboutHeist
+FireAll PopulateOptionsVegaDialogue","""The lobster gene editing equipment was hidden in a bank vault on Volturn. Simmons somehow found out it was there and sent me to steal it. It was an easy job because Simmons had hackers take control of all the bank security systems, but they must have made a mistake because the secret police were waiting for me at the spaceport.""",,
+lobsterQuest_vegaConversationPopulate6,PopulateOptionsVegaDialogue,"playerKnowsAboutLobsters
+!playerKnowsAboutTriTachyon",,,"0:askVegaWhereEquipmentIs:Ask Vega where she shipped the gene editing equipment",
+askVegaWhereEquipmentIs,DialogOptionSelected,$option == askVegaWhereEquipmentIs,"addTagKnowsAboutTriTachyon
+FireAll PopulateOptionsVegaDialogue","""I can't tell you that."" Vega hesitates for a moment. ""As you've probably figured out by now, Simmons and I aren't pirates from Umbra. We work for Tri-Tachyon, and the bosses really want that equipment."" She crosses her arms. ""If you stick to the agreement, you'll get paid and you won't have any problems. If you try to fuck us, it's going to end badly for you.""",,
+lobsterQuest_vegaConversationPopulate7,PopulateOptionsVegaDialogue,"playerKnowsAboutLobsters
+playerKnowsAboutTriTachyon
+playerAlreadyAskedVegaAboutHeist
+!playerAlreadyAskedVegaAboutHacking",,,"0:askVegaAboutHacking:""Is Tri-Tachyon behind the hack on the Volturnian bank?""",
+askVegaAboutHacking,DialogOptionSelected,$option == askVegaAboutHacking,"addTagAlreadyAskedVegaAboutHacking
+FireAll PopulateOptionsVegaDialogue","""Yes. Tri-Tachyon builds back doors into their TriPads and other computer systems. They also use AI cores, which are very good at cyberwarfare for obvious reasons. Those two factors combined make it trivial for them to hack security systems.""",,
+lobsterQuest_vegaConversationPopulate8,PopulateOptionsVegaDialogue,"playerKnowsAboutLobsters
+playerKnowsAboutTriTachyon
+playerAlreadyAskedVegaAboutHacking
+playerAlreadyAskedVegaAboutHeist
+!playerSmashedTheirTriPad",,,"0:smashYourTriPad:Destroy your TriPad by smashing it against the floor",
+smashYourTriPad,DialogOptionSelected,$option == smashYourTriPad,"addTagPlayerSmashedTheirTriPad
+FireAll PopulateOptionsVegaDialogue","You recall that Simmons knows the ID of your TriPad, and that you even opened several files he sent you regarding the mission to rescue Vega. You take out your TriPad and smash it against the floor of the bridge. Your marines look concerned, but Vega just smiles.
+
+""I'm surprised it took you so long to do that, considering the circumstances.""",,
+lobsterQuest_vegaConversationPopulate9,PopulateOptionsVegaDialogue,"playerKnowsAboutLobsters
+playerKnowsAboutTriTachyon
+!playerAlreadyAskedVegaAboutSimmons",,,"0:askVegaWhySimmonsDoesNotDoThingsHimself:""Why didn't Simmons just steal the equipment himself?""",
+askVegaWhySimmonsDoesNotDoThingsHimself,DialogOptionSelected,$option == askVegaWhySimmonsDoesNotDoThingsHimself,"addTagAlreadyAskedVegaAboutSimmons
+FireAll PopulateOptionsVegaDialogue","""Tri-Tachyon is like any other large bureaucracy. There are competing factions within the bureaucracy that have different and sometimes conflicting goals. Simmons and his bosses need to keep their schemes hidden so their opponents can't interfere. They also don't want to cause a diplomatic incident that could be detrimental to the company's interests."" She puts her hands on her hips. ""Can you imagine the headlines if a Paragon-class battleship blew open a bank vault on Volturn, and then flew back to Hybrasil with valuable Domain-era technlogy in tow?""",,
+lobsterQuest_vegaConversationPopulate10,PopulateOptionsVegaDialogue,"playerKnowsAboutLobsters
+playerKnowsAboutTriTachyon",,,"0:threatenToThrowVegaOutOfAirlock:Threaten to throw Vega out the airlock unless she tells you where the equipment is",
+threatenToThrowVegaOutOfAirlock1,DialogOptionSelected,"$option == threatenToThrowVegaOutOfAirlock
+playerSmashedTheirTriPad",,"Vega rolls her eyes. ""There's no need for that. I'm not about to throw my life away over some fucking lobsters."" She pauses for a moment. ""Before Simmons kills you, make sure you tell him you coerced me. And also tell him his hackers screwed up the bank job on Volturn, not me,"" she says flippantly.","0:threatenToThrowVegaOutOfAirlockContinue:""Where is the gene editing equipment?""",
+threatenToThrowVegaOutOfAirlock2,DialogOptionSelected,"$option == threatenToThrowVegaOutOfAirlock
+!playerSmashedTheirTriPad",addTagSimmonsKnowsWhereEquipmentIs,"Vega rolls her eyes. ""There's no need for that. I'm not about to throw my life away over some fucking lobsters."" She pauses for a moment. ""Before Simmons kills you, make sure you tell him you coerced me. And also tell him his hackers screwed up the bank job on Volturn, not me,"" she says flippantly.","0:threatenToThrowVegaOutOfAirlockContinue:""Where is the gene editing equipment?""",
+threatenToThrowVegaOutOfAirlockContinue,DialogOptionSelected,$option == threatenToThrowVegaOutOfAirlockContinue,progressQuestToIlmEnding,"""I paid a smuggler to ship the equipment to Ilm, a colony in the Zagan system. They were supposed to drop it off at a small orbital warehouse owned by a friend of mine. You'll need me to find the right container, so you can't throw me out the airlock just yet.""","0:orderVegaImprisonedUntilIlm:Order your marines to imprison Vega until you reach Ilm",
+orderVegaImprisonedUntilIlm,DialogOptionSelected,$option == orderVegaImprisonedUntilIlm,,"Your marines hesitate, afraid to approach Vega due to her cybernetics.
+
+""It's pointless trying to lock me up. How about I just sit in the cargo hold and some of you keep your rifles pointed at me until we get to Ilm?"" Vega says sardonically.
+
+Her suggestion appears to be satisfactory to your marines. They escort her to the cargo hold.","0:cutCommLinkNoText:Continue",
+#
+#Give Vega the TriPad
+#
+giveVegaTheTriPad,DialogOptionSelected,$option == giveVegaTheTriPad,,"You hand your TriPad to Vega. A wire appears from her wrist and she plugs it into the TriPad. She closes her eyes and her body becomes completely still. After a short wait, she blinks her eyes several times and looks at you. ""Simmons has a shuttle en route to pick me up.""","0:continueToVegaPickup:Wait for the shuttle to arrive",
+giveVegaTheTriPadSmashed,DialogOptionSelected,$option == giveVegaTheTriPadSmashed,,"You allow Vega to approach your comms console. A wire appears from her wrist and she plugs it into the console. She closes her eyes and her body becomes completely still. After a short wait, she blinks her eyes several times and looks at you. ""Simmons has a shuttle en route to pick me up.""","0:continueToVegaPickupSmashed:Wait for the shuttle to arrive",
+continueToVegaPickup,DialogOptionSelected,"$option == continueToVegaPickup",,"You feel a slight bump as the shuttle docks with your flagship. The airlock hisses open, and you see Artyom standing just beyond the threshold. You feel your TriPad vibrate.","0:continueToPaymentAccept:View the message",
+continueToVegaPickupSmashed,DialogOptionSelected,"$option == continueToVegaPickupSmashed",,"You feel a slight bump as the shuttle docks with your flagship. The airlock hisses open, and you see Artyom standing just beyond the threshold. You feel your newly replaced TriPad vibrate.","0:continueToPaymentAccept:View the message",
+continueToPaymentAccept1,DialogOptionSelected,"playerDemandedExtraMoneyInBar
+$option == continueToPaymentAccept","addCreditRewardExtraAmount
+terminateQuestGaveVegaTriPad","""1KTexdemPdxSBcG55heUuTjDRYqbC5ZL8H has sent you 500,000 credits. Accept transfer?"" You tap the yes button, and nod to the marine standing next to you. He stands aside, allowing Vega to step through the airlock. The shuttle departs without incident.","0:cutCommLinkNoText:Continue",
+continueToPaymentAccept2,DialogOptionSelected,"!playerDemandedExtraMoneyInBar
+$option == continueToPaymentAccept","addCreditRewardBaseAmount
+terminateQuestGaveVegaTriPad","""1KTexdemPdxSBcG55heUuTjDRYqbC5ZL8H has sent you 250,000 credits. Accept transfer?"" You tap the yes button, and nod to the marine standing next to you. He stands aside, allowing Vega to step through the airlock. The shuttle departs without incident.","0:cutCommLinkNoText:Continue",
+#
+#Call Simmons yourself
+#
+callSimmonsYourself,DialogOptionSelected,$option == callSimmonsYourself,,"You pull out your TriPad and initiate a call to Simmons. After a short delay, the call is accepted.
+
+""Simmons here.""","0:continueToSimmonsTree:Tell Simmons you have Vega aboard your flagship",
+continueToSimmonsTree,DialogOptionSelected,$option == continueToSimmonsTree,,"""I had a feeling you would be successful. And don't worry about the secret police coming after you."" Simmons chuckles. ""The guys who arrested Vega on Volturn, well, you could say they're sleeping with the lobsters."" He pauses for a moment, then clears his throat. ""I'll send a shuttle to pick up Vega right away. You're about to become quite a bit wealthier.""","0:exchangeVegaForAgreedAmount:Release Vega for the agreed upon amount of credits
+1:demandAnExorbitantAmountOfMoney1:Demand Simmons pay you 1,000,000 credits to release Vega
+2:demandAnExorbitantAmountOfMoney2:Demand Simmons pay you 2,000,000 credits to release Vega
+3:demandAnExorbitantAmountOfMoney3:Demand Simmons pay you 10,000,000 credits to release Vega
+4:playerEndedCallWithSimmons:End the call",
+demandAnExorbitantAmountOfMoney1,DialogOptionSelected,$option == demandAnExorbitantAmountOfMoney1,,"""That's not what we agreed on in the bar, and it's a staggering amount. If you want me to pay that many credits, I'll need to speak with Vega first to make sure she has the information I need.""","0:exchangeVegaForAgreedAmount:Release Vega for the original amount via shuttle pickup
+1:confirmExorbitantDemand:Meet Simmons in-person on Umbra to get the larger payment
+2:playerEndedCallWithSimmons:End the call",
+demandAnExorbitantAmountOfMoney2,DialogOptionSelected,$option == demandAnExorbitantAmountOfMoney2,,"""That's not what we agreed on in the bar, and it's a staggering amount. If you want me to pay that many credits, I'll need to speak with Vega first to make sure she has the information I need.""","0:exchangeVegaForAgreedAmount:Release Vega for the original amount via shuttle pickup
+1:confirmExorbitantDemand:Meet Simmons in-person on Umbra to get the larger payment
+2:playerEndedCallWithSimmons:End the call",
+demandAnExorbitantAmountOfMoney3,DialogOptionSelected,$option == demandAnExorbitantAmountOfMoney3,,"""That's not what we agreed on in the bar, and it's a staggering amount. If you want me to pay that many credits, I'll need to speak with Vega first to make sure she has the information I need.""","0:exchangeVegaForAgreedAmount:Release Vega for the original amount via shuttle pickup
+1:confirmExorbitantDemand:Meet Simmons in-person on Umbra to get the larger payment
+2:playerEndedCallWithSimmons:End the call",
+playerEndedCallWithSimmons,DialogOptionSelected,$option == playerEndedCallWithSimmons,"addTagHungUpOnSimmons
+FireAll PopulateOptionsVegaDialogue","You terminate the call without agreeing to release Vega. She shakes her head. ""Are you stupid? Did you think he was being facetious when he said he had those secret police murdered?"" Holding out her hand, she says, ""Give me the TriPad. I'll smooth this over and get you your money.""",,
+confirmExorbitantDemand,DialogOptionSelected,$option == confirmExorbitantDemand,"addTagDemandedExorbitantAmountFromSimmons
+progressQuestToUmbraMeeting","""As you wish. I'll send you the coordinates on Umbra. Don't keep me waiting."" Simmons terminates the call.
+
+""Am I your prisoner until we get to Umbra?"" Vega asks.","0:allowVegaToMoveFreely:Allow Vega to freely move about the ship
+1:orderVegaImprisonedUntilUmbra:Order your marines to imprison Vega until you reach Umbra",
+allowVegaToMoveFreely,DialogOptionSelected,$option == allowVegaToMoveFreely,,"Your marines seem unnerved by your command, but they disperse without protesting.
+
+""Thank you. I promise to behave myself until we reach Umbra,"" Vega says. She returns to staring at Salus, her body completely motionless.","0:cutCommLinkNoText:Continue",
+orderVegaImprisonedUntilUmbra,DialogOptionSelected,$option == orderVegaImprisonedUntilUmbra,,"Your marines hesitate, afraid to approach Vega due to her cybernetics.
+
+""It's pointless trying to lock me up. How about I just sit in the cargo hold and some of you keep your rifles pointed at me until we get to Umbra?"" Vega says sardonically.
+
+Her suggestion appears to be satisfactory to your marines. They escort her to the cargo hold.","0:cutCommLinkNoText:Continue",
+exchangeVegaForAgreedAmount,DialogOptionSelected,$option == exchangeVegaForAgreedAmount,,"""Perfect. Artyom is already on his way. It was a pleasure doing business with you."" Simmons ends the call.","0:continueToVegaPickup:Continue",
+#
+#Interaction with Simmons on Umbra
+#
+marketAddSimmonsInteractionOption,PopulateOptions,"$tag:boggled_lobster_quest_fireSimmonsUmbraInteraction
+umbraPopulateSimmonsInteraction",,,"0:initiateSimmonsInteractionOnUmbra:Meet with Simmons to ransom Vega",
+initiateSimmonsInteractionOnUmbra,DialogOptionSelected,$option == initiateSimmonsInteractionOnUmbra,,"Lines of footprints in the snow trail from your shuttle to the bottom of a large crater on the surface of Umbra.
+
+""No sign of Simmons yet, boss,"" you hear through your earpiece. Far above, your fleet is monitoring the area from geostationary orbit. Just when you're beginning to think Simmons won't show, you see a disturbance in the slowly falling flecks of snow.","0:continueToShuttleDecloak:Continue",
+continueToShuttleDecloak,DialogOptionSelected,$option == continueToShuttleDecloak,,"A ship larger than a shuttle but smaller than a frigate suddenly disengages phase cloak near the rim of the crater.
+
+""Drop your weapons!"" comes the booming command from the direction of the ship. Several laser turrets on the ship swivel to aim at you and your companions. The marines you brought along have their gauss rifles slung on their backs, and they collectively turn their heads towards you. You can hear Vega laughing despite the bulky EVA suits you're wearing.","0:playerAndMarinesDropWeapons:Order your marines to drop their weapons
+1:playerTriesToOrderAttack:Order your fleet to fire on the phase ship from orbit",
+playerTriesToOrderAttack,DialogOptionSelected,$option == playerTriesToOrderAttack,,"You press a button on your wrist to open a comm link to the bridge of your flagship. Instead of the voices of your crew, all you hear is static. One of the lasers on the phase shuttle fires a short pulse at the snow-covered ground in front your group. The thermal sensors on your suit detect a spike in temperature.
+
+""Drop your weapons! I'm not going to ask a third time.""","0:playerAndMarinesDropWeapons:Order your marines to drop their weapons",
+playerAndMarinesDropWeapons,DialogOptionSelected,$option == playerAndMarinesDropWeapons,terminateQuestMetSimmonsOnUmbra,"Your marines carefully unsling their gauss rifles and toss them on the ground. With superhuman speed, Vega grabs one of the rifles from midair and takes several steps backwards toward the shuttle. A door slides open on the side of the shuttle. Two marines wearing Tri-Tachyon combat armor jump out and jog over to Vega. They each grab one of her arms, and use their suit thrusters to fly back up to the shuttle.","0:continueToEndOfUmbraEvent:Continue",
+continueToEndOfUmbraEvent,DialogOptionSelected,$option == continueToEndOfUmbraEvent,,"As soon as Vega and the marines disappear through the door, the shuttle phase cloaks. It creates a disturbance in the falling snow, and you watch helplessly as the disturbance rapidly moves beyond the rim of the crater and out of view. You hear a crackle in your earpiece.
+
+""What's going on down there, boss? That shuttle is invisble on the phase sensors, and it was emitting a very strong jamming signal. Is everything alright?""
+
+You dejectedly trudge back to your shuttle and return to your flagship.","0:cutCommLinkNoText:Continue",
+#
+#Ilm if you smashed your TriPad
+#
+marketAddIlmInteractionOption1,PopulateOptions,"$tag:boggled_lobster_quest_fireIlmInteractionNoBattle
+ilmPopulateInteractionSmashed",,,"0:continueToGettingEquipment:Retrieve the lobster gene editing equipment",
+continueToGettingEquipment,DialogOptionSelected,$option == continueToGettingEquipment,showVegaCustomVisual,"Your shuttle weaves through a maze of habitats and logistics hubs to reach the orbital warehouse that Vega claims she had the lobster gene editing equipment delivered to. She presses a series of buttons on your comm console. ""This is Elena Vega. Do you copy?""
+
+""Ellie, is that you? What a pleasant surprise!"" comes the response.","0:continueToShuttleEnteringHangar:""How do you know your contact won't inform Simmons we're here?""",
+continueToShuttleEnteringHangar,DialogOptionSelected,$option == continueToShuttleEnteringHangar,,"""That's Adrien. He won't rat me out to Simmons. I saved his life when he was a teenager by killing a bunch of loan sharks he owed money to."" She smiles. ""It wasn't an act of charity. Have you ever wondered how Tri-Tachyon came to dominate the loan sharking business in the Atlantian cloud?""","0:continueToShuttleEnteringHangar2:Dock your shuttle at the orbital warehouse",
+continueToShuttleEnteringHangar2,DialogOptionSelected,$option == continueToShuttleEnteringHangar2,showAdrienCustomVisual,"You, Vega and several of your marines follow Adrien through the warehouse, flanked on both sides by shipping containers stacked to the ceiling. Adrien eventually stops near one of the stacks and presses a button on his TriPad. The side of the crate to your left folds up, revealing a nanoforge connected to a computer terminal clearly of Domain-era origin.","0:continueToShuttleEnteringHangar3:Continue",
+continueToShuttleEnteringHangar3,DialogOptionSelected,$option == continueToShuttleEnteringHangar3,,"Adrien presses another button on the TriPad. A loading drone rolls forward, lifts the crate and starts moving back towards your shuttle.
+
+""Now that you have the lobster gene editor, Simmons won't pay to ransom me. Am I free to go?"" Vega asks hopefully.","0:continueToShuttleEnteringHangar4:""Yes.""",
+continueToShuttleEnteringHangar4,DialogOptionSelected,$option == continueToShuttleEnteringHangar4,terminateQuestIlmNoBattle,"""Thanks, I guess."" She stares at her youthful visage reflected in a window of the space station. ""You know, these cybernetics aren't cheap to maintain, and your shenanigans have cost me any chance of getting another job from Simmons.""
+
+Adrien scratches his balding head. ""You don't need Tri-Tachyon, Ellie. I'm sure a cyborg assassin could make a good living on Mazalot these days.""
+
+Your marines exchange worried looks, and you hurry back to your shuttle.","0:cutCommLinkNoText:Leave the orbital warehouse",
+#
+#Ilm if you didn't smash your TriPad
+#
+marketAddIlmInteractionOption2,PopulateOptions,"$tag:boggled_lobster_quest_fireIlmInteractionWithBattle
+ilmPopulateInteractionNotSmashed",,,"0:continueToGettingEquipmentWithBattle:Retrieve the lobster gene editing equipment",
+marketAddIlmInteractionOption3,PopulateOptions,"$tag:boggled_lobster_quest_readyToGoToWarehouse",,,"0:continueToInvestigateWarehouse:Investigate the orbital warehouse",
+continueToGettingEquipmentWithBattle,DialogOptionSelected,$option == continueToGettingEquipmentWithBattle,showVegaCustomVisual,"""Adrien, do you copy?"" Vega stands at your comms console, attempting to contact the orbital warehouse she had the gene editing equipment delivered to. She frowns. ""There's no response. We're going to have to get closer and see what's going on.""","0:continueConversationTrapQuestion:""Do you think Simmons has laid a trap for us?""",
+continueConversationTrapQuestion,DialogOptionSelected,$option == continueConversationTrapQuestion,,"Vega thinks for a moment. ""Possibly. If you're going to investigate the warehouse, it would be prudent to bring a formidable fleet. Simmons won't hesitate to destroy this ship just because I'm aboard.""","0:continueToInvestigateWarehouse:Investigate the warehouse now
+1:returnToWarehouseLater:Come back later to investigate the warehouse",
+returnToWarehouseLater,DialogOptionSelected,$option == returnToWarehouseLater,addTagReadyToGoToWarehouse,"You decide to come back later.","0:cutCommLinkNoText:Continue",
+continueToInvestigateWarehouse,DialogOptionSelected,$option == continueToInvestigateWarehouse,showVegaCustomVisual,"The warehouse is located within a mess of orbital habitats and other logistics hubs. You send a shuttle packed with marines to approach the facility.
+
+""This place looks deserted, boss,"" the shuttle pilot relays nervously. ""We may need to cut our way in.""","0:continueToSimmonsAppearance:""Do it.""",
+continueToSimmonsAppearance,DialogOptionSelected,$option == continueToSimmonsAppearance,,"""Something's wrong,"" Vega says. As if on queue, a large group of warships exit hyperspace in unison and maneuver to engage your fleet. You see that Simmons is calling you via your TriPad.","0:continueToSimmonsConvo:Answer the call",
+continueToSimmonsConvo,DialogOptionSelected,$option == continueToSimmonsConvo,"showZhangCustomVisual","The visage of a Tri-Tachyon admiral fills the TriPad screen.
+
+""You piece of shit. We had a deal. You thought you could renege and steal from me? Well, think again."" He terminates the call before you can respond.
+
+Zhang is operating without the official sanction of the Tri-Tachyon Corporation. Engaging his fleet won't impact your relations with Tri-Tachyon.","0:continueToZhangBattle:Continue",
+continueToZhangBattle,DialogOptionSelected,$option == continueToZhangBattle,boggledInitiateZhangBattle,,,
+playerDefeatedZhangFleetContinue,boggledBeatZhangFleet,,ShowDefaultVisual,"As the outcome of the battle becomes clear, Zhang's support ships flee towards the jump points. You turn your attention back to recovering the gene editing equipment.","0:continueToVegaMissing:Order your marines to bring Vega to the bridge",
+continueToVegaMissing,DialogOptionSelected,$option == continueToVegaMissing,,"After a brief investigation, your crew reports that during the commotion of the battle, Vega overpowered the marines assigned to guard her. She appears to have stolen a shuttle and flown to Mazalot.
+
+""There is some good news, boss,"" says one of your crewmembers. ""The shuttle we sent to the warehouse was able to cut their way in. They claim to have located the equipment we're looking for.""","0:continueToObtainingEquipment:Have the equipment brought to your flagship",
+continueToObtainingEquipment,DialogOptionSelected,$option == continueToObtainingEquipment,terminateQuestIlmBattle,"Your science team stares at the contents of the shipping container. Inside lies a miniature nanoforge connected to a computer terminal clearly of Domain-era design.
+
+""We'll get to work right away. With this equipment, we should be able to create our own lobsters in no time at all!"" exclaims your chief science officer.
+
+You leave them to their work, your mind filled with dreams of dominating the lobster trade.","0:cutCommLinkNoText:Continue",
+playerLostToZhangFleetContinue,boggledLostToZhangFleet,,"ShowDefaultVisual
+terminateQuestIlmBattleLost","Your fleet is no match for Zhang's battleships. You watch helplessly as his armada seizes control of the warehouse and begins loading all the shipping containers onto Zhang's flagship.
+
+You cry out in anger, your dreams of dominating the lobster trade shattered.","0:cutCommLinkNoText:Continue",
