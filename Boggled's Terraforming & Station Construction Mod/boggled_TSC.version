@@ -2,9 +2,9 @@
     # Points toward the online master .version file. This mod works by comparing
     # the local and online version to see if there is a newer version available.
     #
-    "masterVersionFile":"https://github.com/boggled-starsector/boggled_station_construction/raw/master/Boggled%20Station%20Construction/boggled_station_construction.version",
+    "masterVersionFile":"https://raw.githubusercontent.com/boggled-starsector/boggled_modpack/master/Boggled's%20Terraforming%20%26%20Station%20Construction%20Mod/boggled_TSC.version",
     # The name that is displayed in-game for your mod
-    "modName":"Station Construction",
+    "modName":"Boggled's Terraforming & Station Construction Mod",
     # The ID of the thread where updates to this mod can be found (optional).
     # This is used to launch directly to the forum thread from in the game.
     # The ID is the set of digits at the end of the forum thread URL before the dot.
