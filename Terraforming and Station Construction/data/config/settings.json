@@ -43,7 +43,7 @@
 	"boggledPercentageMultiplierForTerran":100,
 	"boggledPercentageMultiplierForWater":100,
 	"boggledPercentageMultiplierForJungle":80,
-	"boggledPercentageMultiplierForDesert":40,
+	"boggledPercentageMultiplierForDesert":60,
 	"boggledPercentageMultiplierForTundra":80,
 	"boggledPercentageMultiplierForFrozen":40,
 
