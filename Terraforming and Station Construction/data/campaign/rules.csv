@@ -8,6 +8,9 @@ astralGateLeave,DialogOptionSelected,$option == astralGateLeave,DismissDialog,,,
 #
 #Elias Luyten interactions
 #
+marketAddLuytenInteractionIfDecivilized,PopulateOptions,checkAncyraDecivilized,,,"0:fireLuytenConvo:Contact Elias Luyten",
+boggledGateQuest_fireLuytenConvo,DialogOptionSelected,$option == fireLuytenConvo,"showLuytenCustomVisual
+FireBest PopulateOptionsBoggledGateQuest",,,
 boggledGateQuest_IntroGreeting,PickGreeting,"$tag:boggled_gate_quest_eliasLuyten score:10","showLuytenCustomVisual
 FireBest PopulateOptionsBoggledGateQuest","After a short wait, your connection request is accepted.",,
 
