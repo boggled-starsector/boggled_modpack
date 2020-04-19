@@ -23,6 +23,15 @@
 	#Can be used to disable the Skyhook Anchor structure if the player wishes
 	"boggledSkyhookAnchorEnabled":true,
 
+	#Can be used to enable the Hydroponics industry if the player wishes
+	"boggledHydroponicsEnabled":false,
+
+	#Can be used to enable the Cloning industry if the player wishes
+	"boggledCloningEnabled":false,
+
+	#Can be used to enable the Wilflife Exploitation industry if the player wishes
+	"boggledWildlifeExploitationEnabled":false,
+
 	#Can be used to disable building of the Domain-tech stable location structures if the player wishes
 	"boggledDomainTechObjectivesEnabled":true,
 
@@ -139,12 +148,19 @@
 	#immediately (instead of at end-of-day) if the player builds a new gate.
 	"boggledAstralGateConstructionLowPerformanceModeEnabled":true,
 
+	#Controls how much the Astral Gate industry boosts accessibility on the gatekeeper station
+	"boggledGatekeeperStationAccessBoost":50,
+
+	#Controls how much the Astral Gate industry boosts accessibility on allied markets in-system
+	"boggledFriendlyMarketsInSystemAstralGateAccessBoost":25,
+
 	"graphics":
 	{
 		"boggled":
 		{
 			"stellar_mirror":"graphics/icons/industry/stellar_mirror.jpg",
 			"stellar_shade":"graphics/icons/industry/stellar_shade.jpg",
+			"asteroid_processing":"graphics/icons/industry/asteroid_processing.jpg",
 
 			"penelope_secret_intel":"graphics/icons/intel/penelope_secret.png",
 			"portrait_gate_quest_ai":"graphics/portraits/portrait_ai.png",

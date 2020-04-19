@@ -1,7 +1,7 @@
 {
 	"id":"Terraforming and Station Construction",
 	"name":"Terraforming and Station Construction",
-	"version":"5.0.5",
+	"version":"5.1.0",
 	"author": "boggled",
 	"description":"Terraform planets and build stations.",
 	"gameVersion":"0.9.1a",
