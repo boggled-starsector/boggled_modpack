@@ -14,6 +14,9 @@
 	#Setting this to false will completely disable any gate-related content
 	"boggledAstralGateContentEnabled":true,
 
+	#Setting this to false will disable the Gift Astral Gate functionality
+	"boggledGiftAstralGateEnabled":true,
+
 	#Can be used to disable the Domain Archaeology industry if the player wishes
 	"boggledDomainArchaeologyEnabled":true,
 
@@ -32,6 +35,9 @@
 	#Can be used to enable the Wilflife Exploitation industry if the player wishes
 	"boggledWildlifeExploitationEnabled":false,
 
+	#Can be used to enable the Spice Harvesting industry if the player wishes
+	"boggledSpiceHarvestingEnabled":false,
+
 	#Can be used to disable building of the Domain-tech stable location structures if the player wishes
 	"boggledDomainTechObjectivesEnabled":true,
 
@@ -48,6 +54,7 @@
 	"boggledExtraPointsForToxicAtmo":4000,
 	"boggledExtraPointsForRadiation":4000,
 	"boggledPointReductionForHabitable":4000,
+	"boggledTemperaturePointMagnitude":1000,
 
 	"boggledPercentageMultiplierForTerran":100,
 	"boggledPercentageMultiplierForWater":100,
@@ -122,6 +129,8 @@
 	"boggledGateBuildMetalCost":1000,
 	"boggledGateBuildTransplutonicsCost":500,
 	"boggledGateBuildDomainEraArtifactsCost":100, #Only consumed if Domain Archaeology industry is enabled below
+
+	"boggledGiftGateMonthlyPayment":75000,
 
 	#Controls the jump costs for using an Astral gate
 	#Note that these costs only apply if gatekeeper stations are disabled or the gatekeeper station is abandoned

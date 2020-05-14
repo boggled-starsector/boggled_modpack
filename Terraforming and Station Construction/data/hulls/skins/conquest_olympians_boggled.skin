@@ -1,0 +1,19 @@
+{
+	"baseHullId":"conquest",
+	"skinHullId":"conquest_olympians_boggled",
+	"hullName":"Conquest",
+	"descriptionId":"conquest",
+	"descriptionPrefix":"Each ship of the Eridani-Utopia Terraforming Corporation Navy features custom upgrades pursuant to their 'quality over quantity' doctrine. Very few examples of these ships remain extant in the Sector - most were destroyed in the chaotic warfare immediately following the Collapse.",
+	"tags":[],
+	"tech":"Eridani-Utopia Terraforming Corporation Navy",
+	"baseValueMult":5,
+	"spriteName":"graphics/ships/conquest_olympians.png",
+	"coversColor":[255,255,255,255],
+	"removeWeaponSlots":[], 		# ids
+	"removeEngineSlots":[], 		# indices, as engine slots have no id in the .ship file
+	"removeBuiltInMods":[], 		# hullmod ids
+	"removeBuiltInWeapons":[], 		# weapon slot ids
+	"builtInMods":["olympians"],
+	"builtInWeapons":{
+    },
+}

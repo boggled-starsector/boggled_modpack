@@ -1,0 +1,60 @@
+{
+  "hullName": "",
+  "hullId": "boggled_construction_rig",
+  "hullSize": "DESTROYER",
+  "spriteName": "graphics/ships/construction_rig.png",
+  "style": "MIDLINE",
+  "height": 220,
+  "width": 100,
+  "center": [50, 110],
+  "collisionRadius": 179,
+  "shieldCenter": [0, 0],
+  "shieldRadius": 127,
+  "viewOffset": 0,
+  "builtInMods": [
+    "civgrade"
+  ],
+  "weaponSlots": [],
+  "engineSlots": [
+    {
+      "location": [-105, 14],
+      "length": 30,
+      "width": 10,
+      "angle": 180,
+      "contrailSize": 30,
+      "style": "MIDLINE"
+    },
+    {
+      "location": [-106, 6.5],
+      "length": 30,
+      "width": 10,
+      "angle": 180,
+      "contrailSize": 30,
+      "style": "MIDLINE"
+    },
+    {
+      "location": [-104.5, -0.5],
+      "length": 30,
+      "width": 10,
+      "angle": 180,
+      "contrailSize": 30,
+      "style": "MIDLINE"
+    }
+  ],
+  "bounds": [
+    -110, 24,
+    -78.5, 25.5,
+    -78, 46,
+    -24.5, 45,
+    -24, 26.5,
+    37, 26,
+    61, 40.5,
+    111.5, 31.5,
+    111.5, -20.5,
+    77, -24,
+    -21, -9,
+    -28.5, -46,
+    -66, -50,
+    -112, -5
+  ]
+}

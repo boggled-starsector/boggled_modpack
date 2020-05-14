@@ -3,7 +3,7 @@
     "fluxCapacitors": 30,
     "fluxVents": 30,
     "goalVariant": true,
-    "hullId": "conquest",
+    "hullId": "conquest_olympians_boggled",
     "hullMods": [
         "targetingunit",
         "fluxdistributor"
