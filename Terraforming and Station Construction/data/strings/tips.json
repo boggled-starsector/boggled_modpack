@@ -1,0 +1,12 @@
+{
+	tips:[
+		"[Terraforming and Station Construction] Don't want some of the features in this mod? Disable them using the settings file!",
+		"[Terraforming and Station Construction] To terraform a planet, place the Terraforming Control Panel ability on your ability bar. Click it when near a planet you control.",
+		"[Terraforming and Station Construction] Enable 'Cramped Quarters' in the settings file to reduce population growth on stations once they reach a user-defined size.",
+		"[Terraforming and Station Construction] Want to unlock Astral gates and lobster seeding right away? Disable the respective quests in the settings file to immediately enable those features.",
+		"[Terraforming and Station Construction] Some industries included with this mod can be manually enabled using the settings file. These include Hydroponics, Cloning, Wildlife Exploitation and Spice Harvesting.",
+		"[Terraforming and Station Construction] The default hazard rating and accessibility of station markets can be modified using the settings file.",
+		"[Terraforming and Station Construction] Construction costs for each type of station can be modified using the settings file.",
+		"[Terraforming and Station Construction] Terraforming point requirements can be modified using the settings file.",
+		"[Terraforming and Station Construction] The quests added by this mod have different outcomes depending on the player's choices."],
+}

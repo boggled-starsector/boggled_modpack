@@ -1,0 +1,20 @@
+	{
+		"boggled_arcology":{
+		"name":"Arcology",
+		"tilt":20, # left-right (>0 tilts to the left)
+		"pitch":-2, # towards-away from the viewer (>0 pitches towards)
+		"rotation":-5, # degrees/second
+		"planetColor":[255,255,255,255],
+		"atmosphereThickness":0.1, # as fraction of radius.  Set to 0 for no atmosphere
+		"atmosphereThicknessMin":20, #  minimum thickness in pixels
+		"atmosphereColor":[165,140,115,140],
+		"texture":"graphics/planets/arcology.jpg",
+		"icon":"graphics/warroom/icon_planet.png",
+		"iconColor":[165,120,100,255],
+		"isStar":false,
+		"lightPosition":[1,2,8], # in planet radii.  Not used for stars.  z > 0 is above the playing field.
+		"cloudTexture":"graphics/planets/clouds_banded01.png", # omit for no cloud layer
+		"cloudColor":[220,160,100,220],
+		"cloudRotation":12, # degrees/second, optional
+	},
+	}

@@ -46,6 +46,9 @@
 	#be obtained if the player is using randomized core worlds.
 	"boggledLobsterQuestEnabled":true,
 
+	#Controls whether the arcology world type is enabled as a terraforming project option
+	"boggledArcologyWorldTransformationEnabled":true,
+
 	#Used to control the terraforming point values for projects
 	"boggledBaseTerraformingPoints":8000,
 	"boggledExtraPointsForDenseAtmo":4000,
@@ -56,10 +59,11 @@
 	"boggledPointReductionForHabitable":4000,
 	"boggledTemperaturePointMagnitude":1000,
 
+	"boggledPercentageMultiplierForArcology":150,
 	"boggledPercentageMultiplierForTerran":100,
 	"boggledPercentageMultiplierForWater":100,
 	"boggledPercentageMultiplierForJungle":80,
-	"boggledPercentageMultiplierForDesert":60,
+	"boggledPercentageMultiplierForArid":80,
 	"boggledPercentageMultiplierForTundra":80,
 	"boggledPercentageMultiplierForFrozen":40,
 
@@ -163,10 +167,15 @@
 	#Controls how much the Astral Gate industry boosts accessibility on allied markets in-system
 	"boggledFriendlyMarketsInSystemAstralGateAccessBoost":25,
 
+	#Minimum required player level to start the Penelope's Secret (Astral gate) quest
+	"boggledMinimumGateQuestLevel":45,
+
 	"graphics":
 	{
 		"boggled":
 		{
+			#"arcology_glow":"graphics/planets/arcology_glow.png",
+
 			"stellar_mirror":"graphics/icons/industry/stellar_mirror.jpg",
 			"stellar_shade":"graphics/icons/industry/stellar_shade.jpg",
 			"asteroid_processing":"graphics/icons/industry/asteroid_processing.jpg",
