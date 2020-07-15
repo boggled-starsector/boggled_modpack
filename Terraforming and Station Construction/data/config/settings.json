@@ -174,7 +174,7 @@
 	{
 		"boggled":
 		{
-			#"arcology_glow":"graphics/planets/arcology_glow.png",
+			"arcology_glow":"graphics/planets/arcology_glow.png",
 
 			"stellar_mirror":"graphics/icons/industry/stellar_mirror.jpg",
 			"stellar_shade":"graphics/icons/industry/stellar_shade.jpg",
