@@ -22,6 +22,8 @@
 
 	#Can be used to disable the Kletka Simulator (AI core production) industry if the player wishes
 	"boggledKletkaSimulatorEnabled":true,
+	#Toggle whether the Kletka Simulator upkeep changes based on planet temperature
+	"boggledKletkaSimulatorTemperateBasedUpkeep":false,
 
 	#Can be used to disable the Skyhook Anchor structure if the player wishes
 	"boggledSkyhookAnchorEnabled":true,
