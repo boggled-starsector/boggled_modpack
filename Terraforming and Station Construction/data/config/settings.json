@@ -7,6 +7,9 @@
 
 	#Setting this to false will completely disable any terraforming content
 	"boggledTerraformingContentEnabled":true,
+	
+	#Setting this to true will enable type change terraforming projects for gas giants
+	"boggledAllowGasGiantTerraforming":false,
 
 	#Setting this to false will completely disable any station construction content
 	"boggledStationConstructionContentEnabled":true,
@@ -19,6 +22,7 @@
 
 	#Can be used to disable the Domain Archaeology industry if the player wishes
 	"boggledDomainArchaeologyEnabled":true,
+	"boggledReplaceAgreusTechMiningWithDomainArchaeology":true,
 
 	#Can be used to disable the Kletka Simulator (AI core production) industry if the player wishes
 	"boggledKletkaSimulatorEnabled":true,
@@ -171,6 +175,9 @@
 
 	#Minimum required player level to start the Penelope's Secret (Astral gate) quest
 	"boggledMinimumGateQuestLevel":45,
+
+	#Remnant battlestation can be constructed as an orbital station type on player colonies
+	"boggledRemnantStationEnabled":false,
 
 	"graphics":
 	{
