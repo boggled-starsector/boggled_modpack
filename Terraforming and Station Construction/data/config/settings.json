@@ -8,6 +8,11 @@
 	#Setting this to false will completely disable any terraforming content
 	"boggledTerraformingContentEnabled":true,
 	
+	#Enable Terran Eccentric, volcanic and toxic terraforming projects.
+	#If the Unknown Skies mod is enabled, also enables auric, archipelago
+	#and continental terraforming projects.
+	"boggledExtraPlanetTypeTransformationsEnabled":false,
+	
 	#Setting this to true will enable type change terraforming projects for gas giants
 	"boggledAllowGasGiantTerraforming":false,
 
@@ -51,9 +56,13 @@
 	#immediately unlock the ability to seed lobsters. Note that the quest cannot
 	#be obtained if the player is using randomized core worlds.
 	"boggledLobsterQuestEnabled":true,
+	"boggledIgnorePlanetTypeAndAllowSeedingLobstersAnywhere":false,
 
 	#Controls whether the arcology world type is enabled as a terraforming project option
 	"boggledArcologyWorldTransformationEnabled":true,
+	#Allows building arcology-unique structures on any planet type.
+	#Enabling this will introduce very serious balance problems. You've been warned!
+	"boggledArcologySpecificStructuresCanBeBuiltOnAnyPlanetType":false,
 
 	#Used to control the terraforming point values for projects
 	"boggledBaseTerraformingPoints":8000,
@@ -63,6 +72,7 @@
 	"boggledExtraPointsForToxicAtmo":4000,
 	"boggledExtraPointsForRadiation":4000,
 	"boggledPointReductionForHabitable":4000,
+	
 	"boggledTemperaturePointMagnitude":1000,
 
 	"boggledPercentageMultiplierForArcology":150,
@@ -72,6 +82,8 @@
 	"boggledPercentageMultiplierForArid":80,
 	"boggledPercentageMultiplierForTundra":80,
 	"boggledPercentageMultiplierForFrozen":40,
+	"boggledPercentageMultiplierForVolcanic":30,
+	"boggledPercentageMultiplierForToxic":60,
 
 	"boggledPercentageMultiplierForSameTypeTransformation":30,
 
@@ -117,6 +129,11 @@
 	#were created with this mod. If you use this setting, please report back to Boggled if you
 	#encounter any bugs. Appears to work with vanilla and Nex, but untested with any other mods.
 	"boggledApplyStationSettingsToAllStationsInSector":false,
+
+	#Enable the AI Mining Drones station-exclusive structure.
+	#Balanced around stations being capped at 4 or 5 market size by cramped quarters.
+	#Strongly recommended to keep disabled unless cramped quarters is enabled
+	"boggledEnableAIMiningDronesStructure":false,
 
 	#Controls the costs for building mining and siphon stations
 	"boggledStationBuildCreditCost":500000,

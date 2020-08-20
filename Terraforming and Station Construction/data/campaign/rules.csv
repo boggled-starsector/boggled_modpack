@@ -92,6 +92,39 @@ SL_cancelBuild:Never mind",
 stable_buildProceedDomain,DialogOptionSelected,$option == boggledDomainbuildProceed,"boggledObjectiveBuild $slBuildType
 DismissDialog",,,
 #
+#Upgrading sector-tech stable location structures
+#
+stable_upgradeRelayDomainOpt,COB_AddOptions,"boggledObjectiveCheckEnabled
+$tag:makeshift
+$tag:comm_relay",,,21:SL_upgradeToDomainRelay:Upgrade this relay to Domain-tech,
+stable_upgradeArrayDomainOpt,COB_AddOptions,"boggledObjectiveCheckEnabled
+$tag:makeshift
+$tag:sensor_array",,,21:SL_upgradeToDomainArray:Upgrade this sensor array to Domain-tech,
+stable_upgradeBuoyDomainOpt,COB_AddOptions,"boggledObjectiveCheckEnabled
+$tag:makeshift
+$tag:nav_buoy",,,21:SL_upgradeToDomainBuoy:Upgrade this nav buoy to Domain-tech,
+#
+stable_upgradeToDomainRelay,DialogOptionSelected,$option == SL_upgradeToDomainRelay,"$slBuildType = comm_relay 0
+boggledObjectivePrintDescription $slBuildType
+FireBest Stable_DomainUpgradeConfirmOptions",,,
+stable_upgradeToDomainArray,DialogOptionSelected,$option == SL_upgradeToDomainArray,"$slBuildType = sensor_array 0
+boggledObjectivePrintDescription $slBuildType
+FireBest Stable_DomainUpgradeConfirmOptions",,,
+stable_upgradeToDomainBuoy,DialogOptionSelected,$option == SL_upgradeToDomainBuoy,"$slBuildType = nav_buoy 0
+boggledObjectivePrintDescription $slBuildType
+FireBest Stable_DomainUpgradeConfirmOptions",,,
+#
+stable_confirmOptsDomainUpgrade,Stable_DomainUpgradeConfirmOptions,boggledObjectiveCanBuild $slBuildType,,,"boggledDomainUpgradeProceed:Proceed
+SL_cancelUpgrade:Never mind",
+stable_confirmOptsCantDomainUpgrade,Stable_DomainUpgradeConfirmOptions,!boggledObjectiveCanBuild $slBuildType,SetEnabled boggledDomainUpgradeProceed false,,"boggledDomainUpgradeProceed:Proceed
+SL_cancelUpgrade:Never mind",
+stable_upgradeProceedDomain,DialogOptionSelected,$option == boggledDomainUpgradeProceed,"boggledObjectiveBuild $slBuildType
+DismissDialog",,,
+stable_nevermindBoggledUpgrade,DialogOptionSelected,$option == SL_cancelUpgrade,"ShowDefaultVisual
+FireAll COB_AddOptions
+FireBest COB_DisableOptionsIfNeeded
+FireAll COB_DisableIndividualOptions",,,
+#
 #Cruor main menu dialog tree
 #
 marketAddVegaRescueOption,PopulateOptions,"$tag:boggled_lobster_quest_fireVegaRescue
